@@ -61,15 +61,15 @@ Use your Blynk.App (iOS/Android) to connect the device to the cloud.
 
 Blynk.NCP is directly compatible with a set of Dual-MCU boards:
 
-Board                            |                 | MCU / NCP            | Connectivity | Provisioning | Interaction
-:--                              | ---             | :---                 | ---          | ---          | ---
-[Arduino Nano RP2040 Connect][1] | `rp2040connect` | `RP2040`/`NINA-W102` | WiFi 2.4     | BLE-assisted | RGB LED
-[Arduino Nano 33 IoT][2]         | `nano33iot`     | `SAMD21`/`NINA-W102` | WiFi 2.4     | BLE-assisted | -
-[Arduino MKR WiFi 1010][3]       | `mkrwifi1010`   | `SAMD21`/`NINA-W102` | WiFi 2.4     | BLE-assisted | RGB LED
-[Arduino UNO R4 WiFi][4]         | WIP             | `RA4M1`/`ESP32s3`    | WiFi 2.4     | BLE-assisted | -
-[Arduino Portenta C33][5]        | WIP             | `RA4M1`/`ESP32c3`    | WiFi 2.4     | BLE-assisted | -
-[TTGO T-PicoC3][6]               | WIP             | `RP2040`/`ESP32c3`   | WiFi 2.4     | BLE-assisted | -
-[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `RP2040`/`ESP8266`   | WiFi 2.4     | WiFiAP       | -
+Board                            |                 | MCU / NCP            | Connectivity | Provisioning
+:--                              | ---             | :---                 | ---          | ---
+[Arduino Nano RP2040 Connect][1] | `rp2040connect` | `RP2040`/`NINA-W102` | WiFi 2.4     | BLE
+[Arduino Nano 33 IoT][2]         | `nano33iot`     | `SAMD21`/`NINA-W102` | WiFi 2.4     | BLE
+[Arduino MKR WiFi 1010][3]       | `mkrwifi1010`   | `SAMD21`/`NINA-W102` | WiFi 2.4     | BLE
+[Arduino UNO R4 WiFi][4]         | WIP             | `RA4M1`/`ESP32s3`    | WiFi 2.4     | BLE
+[Arduino Portenta C33][5]        | WIP             | `RA4M1`/`ESP32c3`    | WiFi 2.4     | BLE
+[TTGO T-PicoC3][6]               | WIP             | `RP2040`/`ESP32c3`   | WiFi 2.4     | BLE
+[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `RP2040`/`ESP8266`   | WiFi 2.4     | WiFiAP
 
 ## Custom boards
 
@@ -81,13 +81,13 @@ Board                            |                 | MCU / NCP            | Conn
 
 Connectivity module              | NCP firmware         | Chipset         | Connectivity | Provisioning | Interaction
 :--                              | :---                 | :---            | ---          | ---          | ---
-[Adafruit AirLift][20]           | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE-assisted | RGB LED
-[Macchina SuperB][21]            | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE-assisted | Blue LED
-ESP-WROOM-32 4MB<br>(no PSRAM)   | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE-assisted | -
-[Seeed WT32-ETH01][22]           | `wt32_eth01`         | `ESP32+LAN8720` | WiFi 2.4, Ethernet | BLE-assisted | -
+[Adafruit AirLift][20]           | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          | RGB LED
+[Macchina SuperB][21]            | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          | Blue LED
+ESP-WROOM-32 4MB<br>(no PSRAM)   | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          |
+[Seeed WT32-ETH01][22]           | `wt32_eth01`         | `ESP32+LAN8720` | WiFi 2.4, Ethernet | BLE    |
 [Witty Cloud][23]                | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       | RGB LED, User Button
 [DFRobot WiFi Bee][24]           | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       | User Button
-ESP-07S, ESP-12F                 | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       | -
+ESP-07S, ESP-12F                 | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       |
 
 
 ## Disclaimer
