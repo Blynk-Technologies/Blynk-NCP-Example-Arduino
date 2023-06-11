@@ -61,15 +61,15 @@ Use your Blynk.App (iOS/Android) to connect the device to the cloud.
 
 Blynk.NCP is directly compatible with a set of Dual-MCU boards:
 
-Board                            |                 | MCU / NCP            | Connectivity | Provisioning
-:--                              | ---             | :---                 | ---          | ---
-[Arduino Nano RP2040 Connect][1] | `rp2040connect` | `RP2040`/`NINA-W102` | WiFi 2.4     | BLE
-[Arduino Nano 33 IoT][2]         | `nano33iot`     | `SAMD21`/`NINA-W102` | WiFi 2.4     | BLE
-[Arduino MKR WiFi 1010][3]       | `mkrwifi1010`   | `SAMD21`/`NINA-W102` | WiFi 2.4     | BLE
-[Arduino UNO R4 WiFi][4]         | WIP             | `RA4M1`/`ESP32s3`    | WiFi 2.4     | BLE
-[Arduino Portenta C33][5]        | WIP             | `RA4M1`/`ESP32c3`    | WiFi 2.4     | BLE
-[TTGO T-PicoC3][6]               | WIP             | `RP2040`/`ESP32c3`   | WiFi 2.4     | BLE
-[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `RP2040`/`ESP8266`   | WiFi 2.4     | WiFiAP
+Board                            |                 | MCU      | NCP         | Connectivity | Provisioning
+:--                              | ---             | :---     | :---        | ---          | ---
+[Arduino Nano RP2040 Connect][1] | `rp2040connect` | `RP2040` | `NINA-W102` | WiFi 2.4     | BLE
+[Arduino Nano 33 IoT][2]         | `nano33iot`     | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
+[Arduino MKR WiFi 1010][3]       | `mkrwifi1010`   | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
+[Arduino UNO R4 WiFi][4]         | WIP             | `RA4M1`  | `ESP32s3`   | WiFi 2.4     | BLE
+[Arduino Portenta C33][5]        | WIP             | `RA4M1`  | `ESP32c3`   | WiFi 2.4     | BLE
+[TTGO T-PicoC3][6]               | WIP             | `RP2040` | `ESP32c3`   | WiFi 2.4     | BLE
+[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `RP2040` | `ESP8266`   | WiFi 2.4     | WiFiAP
 
 ## Custom boards
 
