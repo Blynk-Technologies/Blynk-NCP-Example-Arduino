@@ -8,7 +8,7 @@
 #define BLYNK_PRINT Serial
 
 #include <BlynkNcpClient.h>
-#include <DemoHelpers.h>
+#include <ExampleHelpers.h>
 
 BlynkTimer timer;
 
