@@ -13,6 +13,7 @@ custom_ncp = dotdict({})
 custom_ncp.firmware     = env.GetProjectOption("custom_ncp.firmware", None)
 custom_ncp.upload_speed = env.GetProjectOption("custom_ncp.upload_speed", "460800")
 custom_ncp.manual_reset = env.GetProjectOption("custom_ncp.manual_reset", False)
+custom_ncp.erase_all    = env.GetProjectOption("custom_ncp.erase_all", False)
 if custom_ncp.manual_reset:
     custom_ncp.before_upload = env.GetProjectOption("custom_ncp.before_upload",  "no_reset")
     custom_ncp.after_upload  = env.GetProjectOption("custom_ncp.after_upload",   "no_reset")
@@ -61,6 +62,7 @@ def upload_ncp(*args, **kwargs):
           #"--flash_mode", "dio", TODO: flash_mode
           #"--flash_freq", "40m", TODO: f_flash
           "--flash_size", "detect",
+          "--erase-all" if custom_ncp.erase_all else "",
         "0", custom_ncp.firmware
     ]))
 
