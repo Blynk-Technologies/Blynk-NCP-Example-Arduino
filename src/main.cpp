@@ -9,8 +9,8 @@
 #define BLYNK_PRINT                   Serial
 
 // Redefine NCP type and connection port settings, if needed
-//#define BLYNK_NCP_SERIAL              Serial1
-//#define BLYNK_NCP_BAUD                2000000
+//#define BLYNK_NCP_SERIAL            Serial1
+//#define BLYNK_NCP_BAUD              2000000
 //#define BLYNK_NCP_MACCHINA_SUPERB
 
 #include <BlynkNcpClient.h>
