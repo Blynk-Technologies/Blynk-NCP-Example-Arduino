@@ -7,8 +7,8 @@ This is an example of Blynk used in a [dual-MCU configuration](https://docs.goog
 
 ## When to use Blynk.NCP?
 
-- You have one of the [supported dual-MCU](#supported-boards) boards and want connect it to Blynk easily
-- You have an existing product and want to add Blynk IoT features to it easily
+- You have one of the [supported dual-MCU](#supported-boards) boards and want connect it to Blynk
+- You want to build a new product that adds Blynk IoT features on top of your existing product (retrofitting)
 
 ## Features
 
