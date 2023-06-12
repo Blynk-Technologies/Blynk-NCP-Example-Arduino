@@ -3,7 +3,12 @@
 This is an example of Blynk used in a [dual-MCU configuration](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present):
 
 - Application/business logic resides on the **Primary MCU**
-- Connectivity is completely off-loaded to the **Network Co-Processor**
+- Connectivity is completely off-loaded to the **Network Co-Processor (NCP)**
+
+## When to use Blynk.NCP?
+
+- You have one of the [supported dual-MCU](#supported-boards) boards and want connect it to Blynk easily
+- You have an existing product and want to add Blynk IoT features to it easily
 
 ## Features
 
@@ -59,7 +64,7 @@ Use your Blynk.App (iOS/Android) to connect the device to the cloud.
 
 ## Supported boards
 
-Blynk.NCP is directly compatible with a set of Dual-MCU boards:
+This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
 Board                            |                 | MCU      | NCP         | Connectivity | Provisioning
 :--                              | ---             | :---     | :---        | ---          | ---
