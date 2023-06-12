@@ -95,9 +95,10 @@ Connectivity module              | NCP firmware         | Chipset         | Conn
 [Adafruit AirLift][20]           | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          | RGB LED
 [Macchina SuperB][21]            | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          | Blue LED
 ESP-WROOM-32 4MB<br>(no PSRAM)   | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          |
-[Seeed WT32-ETH01][22]           | `wt32_eth01`         | `ESP32+LAN8720` | WiFi 2.4, Ethernet | BLE    |
-[Witty Cloud][23]                | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       | RGB LED, User Button
-[DFRobot WiFi Bee][24]           | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       | User Button
+[TTGO T-Internet-POE][22]        | `lilygo_poe`         | `ESP32+LAN8720` | WiFi 2.4, Ethernet POE | BLE    |
+[Seeed WT32-ETH01][23]           | `wt32_eth01`         | `ESP32+LAN8720` | WiFi 2.4, Ethernet     | BLE    |
+[Witty Cloud][24]                | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       | RGB LED, User Button
+[DFRobot WiFi Bee][25]           | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       | User Button
 ESP-07S, ESP-12F                 | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       |
 
 
@@ -123,6 +124,7 @@ If you're interested in using **Blynk.NCP** for commercial applications, feel fr
 
 [20]: https://www.adafruit.com/product/4201
 [21]: https://www.macchina.cc/catalog/m2-accessories/superb
-[22]: https://www.seeedstudio.com/Ethernet-module-based-on-ESP32-series-WT32-ETH01-p-4736.html
-[23]: https://protosupplies.com/product/esp8266-witty-cloud-esp-12f-wifi-module/
-[24]: https://www.dfrobot.com/product-1279.html
+[22]: https://www.lilygo.cc/products/t-internet-poe
+[23]: https://www.seeedstudio.com/Ethernet-module-based-on-ESP32-series-WT32-ETH01-p-4736.html
+[24]: https://protosupplies.com/product/esp8266-witty-cloud-esp-12f-wifi-module/
+[25]: https://www.dfrobot.com/product-1279.html
