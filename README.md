@@ -1,7 +1,8 @@
 # Blynk.NCP
 
-This is an example of Blynk used in a [dual-MCU configuration](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present):
+Blynk.NCP is a solution that off-loads network connectivity to a Network Co-Processor (NCP) in a dual-Microcontroller Unit (MCU) setup, with the application/business logic residing on the primary MCU. It's particularly useful for IoT projects that have specific requirements for the primary MCU or when using Blynk for retrofitting existing products.
 
+Below you will find an example of Blynk used in a [dual-MCU configuration](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present) where:
 - Application/business logic resides on the **Primary MCU**
 - Connectivity is completely off-loaded to the **Network Co-Processor (NCP)**
 
@@ -20,18 +21,18 @@ Using Blynk.NCP is recommended if one of this is true:
   - `BLE`-assisted device provisioning for the best end-user experience
   - `WiFiAP`-based provisioning for devices without BLE support
 - Secure **Blynk.Cloud** connection that provides simple API for:
-  - Virtual Pins, Events, Metadata access
+  - Data transfer with Virtual Pins, troggering Events, and accessing Metadata
   - Time, Timezone and Location
-  - Persistent automations (works even if device is offline)
+  - Persistent automations (automation scenarios that work even if device is offline)
 - Network Manager:
   - WiFi (up to 16 saved networks), Ethernet, Cellular
-- **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud**
-  - Both NCP and MCU update
-  - Local upgrade using **Blynk.App** (during provisioning)
+- **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud** GUI and backend
+  - Both NCP and MCU firmare update
+  - Local firmware upgrade using **Blynk.App** (during device activation by the end-customer)
 
 Additional services that can be provided by the Blynk.NCP:
 
-- State indication - requires a monochrome/RGB/addressable LED attached to the NCP
+- Connectivity-related device state indication - requires a monochrome/RGB/addressable LED attached to the NCP
 - User button - requires a momentary push button attached to the NCP
 - Non-volatile storage for [Preferences](https://github.com/vshymanskyy/Preferences)
 - File System storage
@@ -104,7 +105,7 @@ ESP-07S, ESP-12F                 | `generic_esp8266_4M` | `ESP8266`       | WiFi
 
 ## Disclaimer
 
-> The community edition of **Blynk.NCP** is available for personal usage and evaluation.  
+> The community edition of **Blynk.NCP** is available for personal use and evaluation.  
 If you're interested in using **Blynk.NCP** for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
 
 
