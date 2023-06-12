@@ -14,6 +14,7 @@
 //#define BLYNK_NCP_MACCHINA_SUPERB
 
 #include <BlynkNcpClient.h>
+#include <ArduinoUtils.h>
 
 BlynkTimer timer;
 
@@ -25,19 +26,12 @@ BLYNK_DISCONNECTED() {
   BLYNK_LOG("Blynk disconnected");
 }
 
-template <typename T>
-void waitSerialConsole(T& ser) {
-  // Wait for serial console, up to 3 seconds
-  const uint32_t tstart = millis();
-  while (!ser && (millis() - tstart < 2900)) { delay(1); }
-  delay(100);
-}
-
 void setup() {
   Serial.begin(115200);
   Serial.println();
   waitSerialConsole(Serial);
 
+  // Initialize the Blynk.NCP hardware
   if (Blynk.initNCP()) {
     String ver = Blynk.getNcpVersion();
     BLYNK_LOG("Blynk.NCP firmware: %s", ver.c_str());
@@ -46,12 +40,18 @@ void setup() {
     return;
   }
 
+  // Print state changes
   Blynk.onStateChange([]() {
     BLYNK_LOG("State: %s", Blynk.getStateString());
   });
 
+  // White labeling
+  //Blynk.setVendorPrefix("MyCompany");
+  //Blynk.setVendorServer("dashboard.mycompany.com");
+  // Product setup
   Blynk.begin(BLYNK_TEMPLATE_ID, BLYNK_TEMPLATE_NAME);
 
+  // Publish some data periodically
   timer.setInterval(1000, []() {
     Blynk.virtualWrite(V0, millis());
   });
