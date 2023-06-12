@@ -79,11 +79,11 @@ def get_release_info(release):
             url = f"https://api.github.com/repos/{repo}/releases/latest"
         else:
             url = f"https://api.github.com/repos/{repo}/releases/tags/{release}"
-        r = requests.get(url)
-        r.raise_for_status()
 
-        data = r.json()
-        data["timestamp"] = now
+        with requests.get(url) as r:
+            r.raise_for_status()
+            data = r.json()
+            data["timestamp"] = now
 
         os.makedirs(".pio/BlynkNCP/.cache/", exist_ok=True)
         with open(cached_info, "w") as f:
