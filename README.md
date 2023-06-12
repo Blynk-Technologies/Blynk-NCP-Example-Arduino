@@ -83,25 +83,7 @@ Board                            |                 | MCU      | NCP         | Co
 
 ## Custom boards
 
-![Blynk.NCP connection](docs/BlynkNCP.png)
-
-1. Flash your connectivity module with the [**Blynk.NCP** firmware](https://github.com/blynkkk/BlynkNcpDriver/releases/latest)
-2. Attach NCP to the MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040` or `ATSAMD`)
-3. Use the Blynk-provided library to communicate with the NCP:
-   - [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) - a low-level, `C99` compatible driver with minimal dependencies
-   - [`Blynk library`](https://github.com/blynkkk/blynk-library) provides an optional `C++11` convenience wrapper for the driver
-
-Connectivity module              | NCP firmware         | Chipset         | Connectivity | Provisioning | Interaction
-:--                              | :---                 | :---            | ---          | ---          | ---
-[Adafruit AirLift][20]           | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          | RGB LED
-[Macchina SuperB][21]            | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          | Green LED
-ESP-WROOM-32 4MB<br>(no PSRAM)   | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          |
-[TTGO T-Internet-POE][22]        | `lilygo_poe`         | `ESP32+LAN8720` | WiFi 2.4, Ethernet POE | BLE    |
-[Seeed WT32-ETH01][23]           | `wt32_eth01`         | `ESP32+LAN8720` | WiFi 2.4, Ethernet     | BLE    |
-[Witty Cloud][24]                | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       | RGB LED, User Button
-[DFRobot WiFi Bee][25]           | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       | User Button
-ESP-07S, ESP-12F                 | `generic_esp8266_4M` | `ESP8266`       | WiFi 2.4     | WiFiAP       |
-
+You can also [add a supported connectivity module to your own board](docs/BuildYourOwn.md).
 
 ## Disclaimer
 
