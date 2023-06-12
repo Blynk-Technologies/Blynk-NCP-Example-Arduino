@@ -19,8 +19,7 @@ ESP-07S, ESP-12F                 | `generic_esp8266_4M` | `ESP8266`       | WiFi
 ## How to use
 
 1. Flash your connectivity module with the [**Blynk.NCP** firmware](https://github.com/blynkkk/BlynkNcpDriver/releases/latest)
-   - Use `BlynkNCP_generic_esp32_4M_wifiap.flash.bin`, flash at address `0`
-   - This is a combined firmware, so you only need to flash a single file
+   - This is a combined firmware, so you only need to flash a single file (flash at address `0`)
 2. Connect NCP module to the MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040` or `ATSAMD`) using UART
 3. Use the Blynk-provided library to communicate with the NCP:
    - [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) - a low-level, `C99` compatible driver with minimal dependencies
