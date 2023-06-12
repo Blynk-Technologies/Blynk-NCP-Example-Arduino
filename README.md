@@ -73,7 +73,7 @@ Board                            |                 | MCU      | NCP         | Co
 
 ## Custom boards
 
-1. Flash your connectivity module with the [**Blynk.NCP** firmware](./tools/BlynkNCP)
+1. Flash your connectivity module with the [**Blynk.NCP** firmware](https://github.com/blynkkk/BlynkNcpDriver/releases/latest)
 2. Attach NCP to the MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040` or `ATSAMD`)
 3. Use the Blynk-provided library to communicate with the NCP:
    - [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) - a low-level, `C99` compatible driver with minimal dependencies
