@@ -83,7 +83,7 @@ Board                            |                 | MCU      | NCP         | Co
 
 ## Custom boards
 
-You can also [add a supported connectivity module to your own board](docs/BuildYourOwn.md).
+You can also [add one of the supported connectivity modules](docs/BuildYourOwn.md) to your own board.
 
 ## Disclaimer
 
