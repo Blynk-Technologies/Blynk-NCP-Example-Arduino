@@ -93,7 +93,7 @@ Board                            |                 | MCU      | NCP         | Co
 Connectivity module              | NCP firmware         | Chipset         | Connectivity | Provisioning | Interaction
 :--                              | :---                 | :---            | ---          | ---          | ---
 [Adafruit AirLift][20]           | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          | RGB LED
-[Macchina SuperB][21]            | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          | Blue LED
+[Macchina SuperB][21]            | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          | Green LED
 ESP-WROOM-32 4MB<br>(no PSRAM)   | `generic_esp32_4M`   | `ESP32`         | WiFi 2.4     | BLE          |
 [TTGO T-Internet-POE][22]        | `lilygo_poe`         | `ESP32+LAN8720` | WiFi 2.4, Ethernet POE | BLE    |
 [Seeed WT32-ETH01][23]           | `wt32_eth01`         | `ESP32+LAN8720` | WiFi 2.4, Ethernet     | BLE    |
