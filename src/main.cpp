@@ -31,6 +31,8 @@ void setup() {
   Serial.println();
   waitSerialConsole(Serial);
 
+  BLYNK_LOG("Main firmware: %s", BLYNK_FIRMWARE_VERSION);
+
   // Initialize the Blynk.NCP hardware
   if (Blynk.initNCP()) {
     String ver = Blynk.getNcpVersion();
