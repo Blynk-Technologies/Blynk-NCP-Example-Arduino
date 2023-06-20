@@ -26,6 +26,7 @@ Using Blynk.NCP is recommended if one of this is true:
   - Persistent automations (automation scenarios that work even if device is offline)
 - Network Manager:
   - WiFi (up to 16 saved networks), Ethernet, Cellular
+  - Advanced network connection troubleshooting
 - **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud** GUI and backend
   - Both NCP and MCU firmare update
   - Local firmware upgrade using **Blynk.App** (during device activation by the end-customer)
