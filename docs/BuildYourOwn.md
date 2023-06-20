@@ -43,7 +43,7 @@ In this project, we'll use the full-fledged Blynk library.
 ## 4. Upload the firmware to your `Primary MCU`
 
 - To use `BlynkNcpDriver`, see [this example](https://github.com/blynkkk/BlynkNcpDriver/tree/main/examples/BlynkNCP_Simple)
-- To use `Blynk` C++ library for Arduino, see [this example]()
+- To use `Blynk` C++ library for Arduino, see [this example](https://github.com/blynkkk/BlynkNcpExample)
  
 The expected debug output looks like this:
 ```log
