@@ -19,22 +19,37 @@ Connectivity module              | Firmware file               | Chipset        
 [DFRobot WiFi Bee][25]           | [link][generic_esp8266_4M]  | `ESP8266`       | WiFi 2.4     | WiFiAP       | User Button
 ESP-07S, ESP-12F                 | [link][generic_esp8266_4M]  | `ESP8266`       | WiFi 2.4     | WiFiAP       |
 
-## How to use
+## 1. Flash `Blynk.NCP` firmware to your connectivity module
 
-1. Flash your connectivity module with the [**Blynk.NCP** firmware](https://github.com/blynkkk/BlynkNcpDriver/releases/latest)
-   - This is a combined firmware, so you only need to flash a single file (flash at address `0`)
-2. Connect NCP module to the MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040` or `ATSAMD`) using UART
-3. Use the Blynk-provided library to communicate with the NCP:
-   - [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) - a low-level, `C99` compatible driver with minimal dependencies
-   - [`Blynk library`](https://github.com/blynkkk/blynk-library) provides an optional `C++11` convenience wrapper for the driver
-4. Upload the firmware to your **Primary MCU**. The expected debug output looks like this:
-    ```
-    [1345] NCP responding (baud 115200, 2289 us)
-    [1349] Blynk.NCP firmware: 0.4.6
-    [1684] State: Configuration
-    ```
-5. Use the **Blynk mobile app** (iOS/Android) to configure your new device
+1. Please follow the official firmware flashing guide. This is usually supplied by the module vendor.
+2. Blynk.NCP is shipped as a combined firmware, so you only need to flash a single file (flash at address `0`).
+3. Select the corresponding firmware file, depending on your module type.
 
+## 2. Assemble the board
+
+Connect Blynk.NCP to the Primary MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040` or `ATSAMD`) using UART.  
+For example, here's how to connect the XBee form factor modules (`Macchina SuperB`, `DFRobot WiFi Bee`) to the `Raspberry Pi Pico` board:
+
+![Blynk.NCP breadboard](PiPico-XBee-BlynkNCP.png)
+
+## 3. Use the Blynk-provided library to communicate with the NCP
+
+There are several options here:
+- [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) - a low-level, `C99` compatible driver with minimal dependencies
+- [`Blynk library`](https://github.com/blynkkk/blynk-library) provides an optional `C++11` convenience wrapper for the driver
+
+In this project, we'll use the full-fledged Blynk library.
+
+## 4. Upload the firmware to your `Primary MCU`
+
+The expected debug output looks like this:
+```log
+[1345] NCP responding (baud 115200, 2289 us)
+[1349] Blynk.NCP firmware: 0.4.6
+[1684] State: Configuration
+```
+
+## 5. Use the **Blynk mobile app** (iOS/Android) to configure your new device
 
 
 [10]: https://www.espressif.com/en/products/modules
