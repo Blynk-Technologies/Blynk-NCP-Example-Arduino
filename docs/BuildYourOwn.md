@@ -54,7 +54,7 @@ The expected debug output looks like this:
 
 ## 5. Use the **Blynk mobile app** (iOS/Android) to configure your new device
 
-Open the Blynk App and click "Add New Device"
+Open the Blynk App -> click "Add New Device" -> Select "Find Devices Nearby"
 
 ## 6. Next steps
 
