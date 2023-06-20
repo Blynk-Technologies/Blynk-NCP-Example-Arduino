@@ -54,6 +54,15 @@ The expected debug output looks like this:
 
 ## 5. Use the **Blynk mobile app** (iOS/Android) to configure your new device
 
+Open the Blynk App and click "Add New Device"
+
+## 6. Next steps
+
+When using `BlynkNcpDriver` directly or integrating `Blynk.NCP` with non-Arduino boards, additional development may be needed to support features like the primary MCU OTA upgrades, Time and Location API, etc.
+
+Please check out the [BlynkNcpDriver docs](https://github.com/blynkkk/BlynkNcpDriver/tree/main/docs) for further details.
+
+
 
 [10]: https://www.espressif.com/en/products/modules
 
