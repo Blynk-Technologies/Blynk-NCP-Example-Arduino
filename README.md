@@ -8,12 +8,12 @@ Below you will find an example of Blynk used in a [dual-MCU configuration](https
 
 ## When to use Blynk.NCP?
 
-Using Blynk.NCP is recommended if one of this is true:
+Using Blynk.NCP is recommended if one of these is true:
 
 - You have one of the [supported dual-MCU](#supported-boards) boards and want connect it to Blynk
 - You're building a new IoT product with specific requirements for the Primary MCU, so you're adding a separate connectivity module
 - You want to build a new product that adds Blynk IoT features on top of your existing product (retrofitting)
-- You are looking for a **ridiculously low** risks, integration efforts and time to market
+- You are looking for a **ridiculously low** risks, integration efforts, and time to market
 
 ## Features
 
@@ -21,14 +21,14 @@ Using Blynk.NCP is recommended if one of this is true:
   - `BLE`-assisted device provisioning for the best end-user experience
   - `WiFiAP`-based provisioning for devices without BLE support
 - Secure **Blynk.Cloud** connection that provides simple API for:
-  - Data transfer with Virtual Pins, troggering Events, and accessing Metadata
+  - Data transfer with Virtual Pins, reporting Events, and accessing Metadata
   - Time, Timezone and Location
-  - Persistent automations (automation scenarios that work even if device is offline)
+  - Persistent automations (automation scenarios that work even if the device is offline) - *soon*
 - Network Manager:
   - WiFi (up to 16 saved networks), Ethernet, Cellular
   - Advanced network connection troubleshooting
 - **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud** GUI and backend
-  - Both NCP and MCU firmare update
+  - Both NCP and MCU firmware updates
   - Local firmware upgrade using **Blynk.App** (during device activation by the end-customer)
 
 Additional services that can be provided by the Blynk.NCP:
@@ -49,7 +49,7 @@ Flash the Blynk.NCP firmware:
 pio run -e rp2040connect -t upload_ncp
 ```
 
-> **Note:** this overwrites both the MCU and the NINA module firmware.  
+> **Note:** This overwrites both the MCU and the NINA module firmware.  
 You can [restore the stock NCP firmware][restore] easily.
 
 Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
@@ -62,7 +62,8 @@ Open `src/main.cpp` and fill in [information from your Blynk Template](https://b
 Build and flash the example project, run the serial monitor:
 
 ```sh
-pio run -e rp2040connect -t upload -t monitor
+pio run -e rp2040connect -t upload
+pio device monitor
 ```
 
 Use your Blynk.App (iOS/Android) to connect the device to the cloud.
