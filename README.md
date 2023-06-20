@@ -76,9 +76,9 @@ Board                            |                 | MCU      | NCP         | Co
 [Arduino Nano RP2040 Connect][1] | `rp2040connect` | `RP2040` | `NINA-W102` | WiFi 2.4     | BLE
 [Arduino Nano 33 IoT][2]         | `nano33iot`     | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
 [Arduino MKR WiFi 1010][3]       | `mkrwifi1010`   | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
-[Arduino UNO R4 WiFi][4]         | WIP             | `RA4M1`  | `ESP32s3`   | WiFi 2.4     | BLE
-[Arduino Portenta C33][5]        | WIP             | `RA4M1`  | `ESP32c3`   | WiFi 2.4     | BLE
-[TTGO T-PicoC3][6]               | WIP             | `RP2040` | `ESP32c3`   | WiFi 2.4     | BLE
+[Arduino UNO R4 WiFi][4]         | *soon*          | `RA4M1`  | `ESP32s3`   | WiFi 2.4     | BLE
+[Arduino Portenta C33][5]        | *soon*          | `RA4M1`  | `ESP32c3`   | WiFi 2.4     | BLE
+[TTGO T-PicoC3][6]               | *soon*          | `RP2040` | `ESP32c3`   | WiFi 2.4     | BLE
 [RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `RP2040` | `ESP8266`   | WiFi 2.4     | WiFiAP
 
 ## Custom boards
@@ -104,10 +104,3 @@ If you're interested in using **Blynk.NCP** for commercial applications, feel fr
 [6]: https://www.lilygo.cc/products/lilygo%C2%AE-t-picoc3-esp32-c3-rp2040-1-14-inch-lcd-st7789v
 [7]: https://www.raspberrypi.com/products/raspberry-pi-pico
 [8]: https://www.waveshare.com/pico-esp8266.htm
-
-[20]: https://www.adafruit.com/product/4201
-[21]: https://www.macchina.cc/catalog/m2-accessories/superb
-[22]: https://www.lilygo.cc/products/t-internet-poe
-[23]: https://www.seeedstudio.com/Ethernet-module-based-on-ESP32-series-WT32-ETH01-p-4736.html
-[24]: https://protosupplies.com/product/esp8266-witty-cloud-esp-12f-wifi-module/
-[25]: https://www.dfrobot.com/product-1279.html
