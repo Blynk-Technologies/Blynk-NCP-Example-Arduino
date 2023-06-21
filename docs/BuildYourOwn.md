@@ -17,7 +17,7 @@ You will need:
 
 ## 2. Assemble the board
 
-Connect Blynk.NCP to the Primary MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040` or `ATSAMD`) using UART.  
+Connect Blynk.NCP to the Primary MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040`, `ATSAMD`, `K210`, ...) using UART.  
 For example, here's how to connect the XBee form factor modules (`Macchina SuperB`, `DFRobot WiFi Bee`) to the `Raspberry Pi Pico` board:
 
 ![Blynk.NCP breadboard](./Images/PiPico-XBee-BlynkNCP.png)
