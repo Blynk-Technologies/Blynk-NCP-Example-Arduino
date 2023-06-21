@@ -19,14 +19,14 @@ Using Blynk.NCP is recommended if one of these is true:
 - Secure **Blynk.Cloud** connection that provides simple API for:
   - Data transfer with Virtual Pins, reporting Events, and accessing Metadata
   - Time, Timezone and Location
-  - Persistent automations (automation scenarios that work even if the device is offline) - *soon*
 - Network Manager:
   - WiFi (up to 16 saved networks), Ethernet, Cellular
   - Advanced network connection troubleshooting
 - **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud** GUI and backend
   - Both NCP and MCU firmware updates
   - Local firmware upgrade using **Blynk.App** (during device activation by the end-customer)
-
+- Persistent automations (automation scenarios that work even if the device is offline) - *soon*
+  
 Additional services that can be provided by the Blynk.NCP:
 
 - Connectivity-related device state indication - requires a monochrome/RGB/addressable LED attached to the NCP
