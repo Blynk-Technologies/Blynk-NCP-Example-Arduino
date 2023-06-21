@@ -80,7 +80,7 @@ pio run -e rp2040connect -t upload
 pio device monitor
 ```
 
-## Use the **Blynk mobile app** (iOS/Android) to configure your new device
+## Use the Blynk iOS/Android app to configure your new device
 
 Ensure that the Blynk App is installed on your smartphone and scan this QR code:
 
