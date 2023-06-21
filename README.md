@@ -19,7 +19,7 @@ Using Blynk.NCP is recommended if one of these is true:
   - `WiFiAP`-based provisioning for devices without BLE support
 - Secure **Blynk.Cloud** connection that provides simple API for:
   - Data transfer with Virtual Pins, reporting Events, and accessing Metadata
-  - `Time`, `Timezone` and `Location`
+  - `Time`, `Timezone` and `Location`, with an ability to track local time when the device is offline, including DST transitions
 - Network Manager:
   - WiFi (up to 16 saved networks), Ethernet, Cellular (depending on the hardware)
   - Advanced network connection troubleshooting
@@ -32,7 +32,7 @@ Additional services that can be provided by the Blynk.NCP:
 - Persistent automations (automation scenarios that work even if the device is offline) - *soon*
 - Connectivity-related device state indication - requires a monochrome/RGB/addressable LED attached to the NCP
 - User button, which also functions as a configuration reset - requires a momentary push button attached to the NCP
-- Non-volatile storage for [Preferences](https://github.com/vshymanskyy/Preferences)
+- Non-volatile storage for [Preferences](https://github.com/vshymanskyy/Preferences) library
 - File System storage
 - Factory testing and provisioning
 
