@@ -11,7 +11,7 @@ You will need:
 
 ## 1. Flash `Blynk.NCP` firmware to your connectivity module
 
-1. Please follow the official firmware flashing guide. This is usually supplied by the module vendor.
+1. Please follow the official firmware flashing guide. This is usually provided by the module vendor.
 2. Blynk.NCP is shipped as a combined firmware, so you only need to flash a single file (flash at address `0`).
 3. Select the [firmware file, corresponding to your module type](https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Supported%20Modules.md).
 
