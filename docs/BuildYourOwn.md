@@ -39,8 +39,8 @@ The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provide
     [1684] State: Configuration
     ```
 
-> Alternatively, you can use the [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) directly. This is a low-level, `C99` compatible library with minimal dependencies.  
-It's used internally by the Blynk C++ library to talk to the NCP. See [BlynkNcpDriver example](https://github.com/blynkkk/BlynkNcpDriver/tree/main/examples/BlynkNCP_Simple).
+> **Note:** Blynk C++ library uses [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) internally to talk to the NCP.
+You can use this low-level, `C99` compatible library with minimal dependencies directly. See [BlynkNcpDriver example](https://github.com/blynkkk/BlynkNcpDriver/tree/main/examples/BlynkNCP_Simple).
 
 ## 4. Use the **Blynk mobile app** (iOS/Android) to configure your new device
 
