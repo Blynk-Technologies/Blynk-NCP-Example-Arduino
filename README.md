@@ -12,7 +12,7 @@ Using Blynk.NCP is recommended if one of these is true:
 
 - You have one of the [supported dual-MCU](#supported-boards) boards and want connect it to Blynk
 - You're building a new IoT product with specific requirements for the Primary MCU, so you're adding a separate connectivity module
-- You want to build a new product that adds Blynk IoT features on top of your existing product (retrofitting)
+- You are using Blynk for retrofitting your existing products
 - You are looking for a **ridiculously low** risks, integration efforts, and time to market
 
 ## Features
@@ -22,10 +22,10 @@ Using Blynk.NCP is recommended if one of these is true:
   - `WiFiAP`-based provisioning for devices without BLE support
 - Secure **Blynk.Cloud** connection that provides simple API for:
   - Data transfer with Virtual Pins, reporting Events, and accessing Metadata
-  - Time, Timezone and Location
+  - `Time`, `Timezone` and `Location` API
   - Persistent automations (automation scenarios that work even if the device is offline) - *soon*
 - Network Manager:
-  - WiFi (up to 16 saved networks), Ethernet, Cellular
+  - WiFi (up to 16 saved networks), Ethernet, Cellular (depending on the hardware)
   - Advanced network connection troubleshooting
 - **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud** GUI and backend
   - Both NCP and MCU firmware updates
