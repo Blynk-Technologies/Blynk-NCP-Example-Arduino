@@ -64,7 +64,7 @@ pio run -e rp2040connect -t upload_ncp
 ```
 
 > **Note:** This overwrites both the MCU and the NINA module firmware.  
-You can [restore the stock NCP firmware][restore] easily.
+You can [restore the stock firmware][restore] easily.
 
 Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
 
