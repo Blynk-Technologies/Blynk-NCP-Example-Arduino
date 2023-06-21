@@ -47,9 +47,9 @@ The expected debug output looks like this:
 
 Ensure that the Blynk App is installed on your smartphone and scan this QR code:
 
-![Add New Device QR|250](./Images/AddNewDeviceQR.png)
+<img alt="Add New Device QR" src="./Images/AddNewDeviceQR.png" width="250" />
 
-Or, open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
+Alternatively: open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 
 ## 6. Next steps
 
