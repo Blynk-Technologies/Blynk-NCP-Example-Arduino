@@ -9,7 +9,8 @@ Using Blynk.NCP is recommended if one of these is true:
 - You have one of the [supported dual-MCU](#supported-boards) boards and want connect it to Blynk
 - You're building a new IoT product with specific requirements for the Primary MCU, so you're adding a separate connectivity module
 - You are using Blynk for retrofitting your existing products
-- You are looking for **ridiculously low** risks, integration efforts, and time to market, along with improved reliability of your product
+- You have included an **AT command**-based module, but you struggle to make it work right or to achieve your product goals
+- You are looking for **ridiculously low** risks, integration efforts, and time to market, along with **improved reliability** of your products
 
 ## Features
 
