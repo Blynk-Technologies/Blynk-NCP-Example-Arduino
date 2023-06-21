@@ -66,8 +66,13 @@ pio run -e rp2040connect -t upload
 pio device monitor
 ```
 
-Use your Blynk.App (iOS/Android) to connect the device to the cloud.
+## Use the **Blynk mobile app** (iOS/Android) to configure your new device
 
+Ensure that the Blynk App is installed on your smartphone and scan this QR code:
+
+<img alt="Add New Device QR" src="./docs/Images/AddNewDeviceQR.png" width="250" />
+
+Alternatively: open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 
 ## Supported boards
 
