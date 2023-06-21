@@ -1,6 +1,6 @@
 # Blynk.NCP
 
-Blynk.NCP is a solution that off-loads network connectivity to a **Network Co-Processor (NCP)** in a [dual-Microcontroller Unit (MCU)](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present) setup, with the application/business logic residing on the **Primary MCU**. It's particularly useful for IoT projects that have specific requirements for the primary MCU or when using Blynk for retrofitting existing products.
+Blynk.NCP is a solution that off-loads network connectivity to a **Network Co-Processor (NCP)** in a [dual-Microcontroller Unit (MCU)](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present) setup, with the application/business logic residing on the **Primary MCU**.
 
 ## When to use Blynk.NCP?
 
