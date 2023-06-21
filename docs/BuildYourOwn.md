@@ -59,8 +59,8 @@ Please check out the [BlynkNcpDriver docs](https://github.com/blynkkk/BlynkNcpDr
 
 ## Disclaimer
 
-> The community edition of **Blynk.NCP** is available for personal use and evaluation.  
-If you're interested in using **Blynk.NCP** for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
+> The community edition of Blynk.NCP is available for personal use and evaluation.  
+If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
 
 
 [blynk_sales]: https://blynk.io/en/contact-us-business
