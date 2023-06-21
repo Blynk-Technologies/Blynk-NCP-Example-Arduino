@@ -53,7 +53,7 @@ Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find De
 
 ## 5. Next steps
 
-When using `BlynkNcpDriver` directly or integrating `Blynk.NCP` with non-Arduino boards, additional development may be needed to support features like the primary MCU OTA upgrades, Time and Location API, etc.
+When using `BlynkNcpDriver` directly or integrating `Blynk.NCP` with non-Arduino boards, additional development may be needed to support features like the primary MCU OTA upgrades, Real-Time Clock integration, etc.
 
 Please check out the [BlynkNcpDriver docs](https://github.com/blynkkk/BlynkNcpDriver/tree/main/docs) for further details.
 
