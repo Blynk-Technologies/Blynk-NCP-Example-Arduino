@@ -30,7 +30,8 @@ The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provide
 2. Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject)
 
 > Alternatively, you can use the [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) directly.  
-This is a low-level, `C99` compatible driver with minimal dependencies. It's used internally by the Blynk C++ library to talk to the NCP.
+This is a low-level, `C99` compatible library with minimal dependencies.  
+It's used internally by the Blynk C++ library to talk to the NCP.  
 See [BlynkNcpDriver example](https://github.com/blynkkk/BlynkNcpDriver/tree/main/examples/BlynkNCP_Simple).
 
 ## 4. Run the example on your `Primary MCU`
