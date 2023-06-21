@@ -40,7 +40,7 @@ The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provide
     ```
 
 > **Note:** Blynk C++ library uses [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) internally to talk to the NCP.
-You can use this low-level, `C99` compatible library with minimal dependencies directly. See [BlynkNcpDriver example](https://github.com/blynkkk/BlynkNcpDriver/tree/main/examples/BlynkNCP_Simple).
+You can use this low-level, `C99` compatible library with minimal dependencies directly. See [BlynkNcpDriver example](https://github.com/blynkkk/BlynkNcpDriver/blob/main/examples/BlynkNCP_Simple/BlynkNCP_Simple.ino).
 
 ## 4. Use the **Blynk mobile app** (iOS/Android) to configure your new device
 
