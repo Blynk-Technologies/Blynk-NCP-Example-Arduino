@@ -39,6 +39,24 @@ Additional services that can be provided by the Blynk.NCP:
 - File System storage
 - Factory testing and provisioning
 
+## Supported boards
+
+This example project is compatible with a set of ready-to-use Dual-MCU boards:
+
+Board                            |                 | MCU      | NCP         | Connectivity | Provisioning
+:--                              | ---             | :---     | :---        | ---          | ---
+[Arduino Nano RP2040 Connect][1] | `rp2040connect` | `RP2040` | `NINA-W102` | WiFi 2.4     | BLE
+[Arduino Nano 33 IoT][2]         | `nano33iot`     | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
+[Arduino MKR WiFi 1010][3]       | `mkrwifi1010`   | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
+[Arduino UNO R4 WiFi][4]         | *soon*          | `RA4M1`  | `ESP32s3`   | WiFi 2.4     | BLE
+[Arduino Portenta C33][5]        | *soon*          | `RA4M1`  | `ESP32c3`   | WiFi 2.4     | BLE
+[TTGO T-PicoC3][6]               | *soon*          | `RP2040` | `ESP32c3`   | WiFi 2.4     | BLE
+[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `RP2040` | `ESP8266`   | WiFi 2.4     | WiFiAP
+
+## Custom boards
+
+You can also [add one of the supported connectivity modules](docs/BuildYourOwn.md) to your own board.
+
 ## Getting started
 
 This is a **PlatformIO** project. We recommend using [**VSCode**][pio_vscode] or [**PIO CLI**][pio_cli].  
@@ -73,24 +91,6 @@ Ensure that the Blynk App is installed on your smartphone and scan this QR code:
 <img alt="Add New Device QR" src="./docs/Images/AddNewDeviceQR.png" width="250" />
 
 Alternatively: open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
-
-## Supported boards
-
-This example project is compatible with a set of ready-to-use Dual-MCU boards:
-
-Board                            |                 | MCU      | NCP         | Connectivity | Provisioning
-:--                              | ---             | :---     | :---        | ---          | ---
-[Arduino Nano RP2040 Connect][1] | `rp2040connect` | `RP2040` | `NINA-W102` | WiFi 2.4     | BLE
-[Arduino Nano 33 IoT][2]         | `nano33iot`     | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
-[Arduino MKR WiFi 1010][3]       | `mkrwifi1010`   | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
-[Arduino UNO R4 WiFi][4]         | *soon*          | `RA4M1`  | `ESP32s3`   | WiFi 2.4     | BLE
-[Arduino Portenta C33][5]        | *soon*          | `RA4M1`  | `ESP32c3`   | WiFi 2.4     | BLE
-[TTGO T-PicoC3][6]               | *soon*          | `RP2040` | `ESP32c3`   | WiFi 2.4     | BLE
-[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `RP2040` | `ESP8266`   | WiFi 2.4     | WiFiAP
-
-## Custom boards
-
-You can also [add one of the supported connectivity modules](docs/BuildYourOwn.md) to your own board.
 
 ## Disclaimer
 
