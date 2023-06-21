@@ -25,10 +25,10 @@ Using Blynk.NCP is recommended if one of these is true:
 - **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud** GUI and backend
   - Both NCP and MCU firmware updates
   - Local firmware upgrade using **Blynk.App** (during device activation by the end-customer)
-- Persistent automations (automation scenarios that work even if the device is offline) - *soon*
-  
+
 Additional services that can be provided by the Blynk.NCP:
 
+- Persistent automations (automation scenarios that work even if the device is offline) - *soon*
 - Connectivity-related device state indication - requires a monochrome/RGB/addressable LED attached to the NCP
 - User button - requires a momentary push button attached to the NCP
 - Non-volatile storage for [Preferences](https://github.com/vshymanskyy/Preferences)
