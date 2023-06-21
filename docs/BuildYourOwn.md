@@ -27,24 +27,24 @@ For example, here's how to connect the XBee form factor modules (`Macchina Super
 The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provides everything needed to work with **Blynk.NCP**.
 
 1. Use [this example](https://github.com/blynkkk/BlynkNcpExample)
-2. Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject)
+2. Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
+    ```cpp
+    #define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
+    #define BLYNK_TEMPLATE_NAME         "MyDevice"
+    ```
+3. Run the example on your `Primary MCU`. The expected debug output looks like this:
+    ```log
+    [1345] NCP responding (baud 115200, 2289 us)
+    [1349] Blynk.NCP firmware: 0.4.6
+    [1684] State: Configuration
+    ```
 
-> Alternatively, you can use the [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) directly.  
+Alternatively, you can use the [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) directly.  
 This is a low-level, `C99` compatible library with minimal dependencies.  
 It's used internally by the Blynk C++ library to talk to the NCP.  
 See [BlynkNcpDriver example](https://github.com/blynkkk/BlynkNcpDriver/tree/main/examples/BlynkNCP_Simple).
 
-## 4. Run the example on your `Primary MCU`
-
-The expected debug output looks like this:
-
-```log
-[1345] NCP responding (baud 115200, 2289 us)
-[1349] Blynk.NCP firmware: 0.4.6
-[1684] State: Configuration
-```
-
-## 5. Use the **Blynk mobile app** (iOS/Android) to configure your new device
+## 4. Use the **Blynk mobile app** (iOS/Android) to configure your new device
 
 Ensure that the Blynk App is installed on your smartphone and scan this QR code:
 
@@ -52,7 +52,7 @@ Ensure that the Blynk App is installed on your smartphone and scan this QR code:
 
 Alternatively: open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 
-## 6. Next steps
+## 5. Next steps
 
 When using `BlynkNcpDriver` directly or integrating `Blynk.NCP` with non-Arduino boards, additional development may be needed to support features like the primary MCU OTA upgrades, Time and Location API, etc.
 
