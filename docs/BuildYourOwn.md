@@ -32,7 +32,7 @@ The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provide
     #define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
     #define BLYNK_TEMPLATE_NAME         "MyDevice"
     ```
-3. Run the example on your `Primary MCU`. The expected debug output looks like this:
+3. Run the example on your **Primary MCU**. The expected debug output looks like this:
     ```log
     [1345] NCP responding (baud 115200, 2289 us)
     [1349] Blynk.NCP firmware: 0.4.6
@@ -48,7 +48,7 @@ Ensure that the Blynk App is installed on your smartphone and scan this QR code:
 
 <img alt="Add New Device QR" src="./Images/AddNewDeviceQR.png" width="250" />
 
-Alternatively: open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
+Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 
 ## 5. Next steps
 
