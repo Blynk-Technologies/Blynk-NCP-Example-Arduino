@@ -23,7 +23,7 @@ For example, here's how to connect the XBee form factor modules (`Macchina Super
 
 ![Blynk.NCP breadboard](./Images/PiPico-XBee-BlynkNCP.png)
 
-## 3. Use the Blynk-provided library to communicate with the NCP
+## 3. Use the Blynk library to communicate with the NCP
 
 The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provides everything needed to work with **Blynk.NCP**.
 
