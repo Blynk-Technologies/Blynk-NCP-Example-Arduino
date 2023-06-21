@@ -24,17 +24,17 @@ For example, here's how to connect the XBee form factor modules (`Macchina Super
 
 ## 3. Use the Blynk-provided library to communicate with the NCP
 
-There are several options here:
-- [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) - a low-level, `C99` compatible driver with minimal dependencies
-- [`Blynk library`](https://github.com/blynkkk/blynk-library) provides an optional `C++11` convenience wrapper for the driver
+The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provides everything needed to work with **Blynk.NCP**.
 
-In this project, we'll use the full-fledged Blynk library.
+1. Use [this example](https://github.com/blynkkk/BlynkNcpExample)
+2. Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject)
 
-## 4. Upload the firmware to your `Primary MCU`
+> Alternatively, you can use the [`BlynkNcpDriver`](https://github.com/blynkkk/BlynkNcpDriver) directly.  
+This is a low-level, `C99` compatible driver with minimal dependencies. It's used internally by the Blynk C++ library to talk to the NCP.
+See [BlynkNcpDriver example](https://github.com/blynkkk/BlynkNcpDriver/tree/main/examples/BlynkNCP_Simple).
 
-- To use `BlynkNcpDriver`, see [this example](https://github.com/blynkkk/BlynkNcpDriver/tree/main/examples/BlynkNCP_Simple)
-- To use `Blynk` C++ library for Arduino, see [this example](https://github.com/blynkkk/BlynkNcpExample)
- 
+## 4. Run the example on your `Primary MCU`
+
 The expected debug output looks like this:
 
 ```log
