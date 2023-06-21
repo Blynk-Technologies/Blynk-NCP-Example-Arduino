@@ -1,6 +1,6 @@
 # Building a new device using Blynk.NCP
 
-![Blynk.NCP connection](BlynkNCP.png)
+![Blynk.NCP connection](./Images/BlynkNCP.png)
 
 ## Components Used in This Project
 
@@ -20,7 +20,7 @@ You will need:
 Connect Blynk.NCP to the Primary MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040` or `ATSAMD`) using UART.  
 For example, here's how to connect the XBee form factor modules (`Macchina SuperB`, `DFRobot WiFi Bee`) to the `Raspberry Pi Pico` board:
 
-![Blynk.NCP breadboard](PiPico-XBee-BlynkNCP.png)
+![Blynk.NCP breadboard](./Images/PiPico-XBee-BlynkNCP.png)
 
 ## 3. Use the Blynk-provided library to communicate with the NCP
 
@@ -47,7 +47,7 @@ The expected debug output looks like this:
 
 Ensure that the Blynk App is installed on your smartphone and scan this QR code:
 
-![Add New Device QR](AddNewDeviceQR.png =250x250)
+![Add New Device QR](./Images/AddNewDeviceQR.png =250x250)
 
 Or, open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 
