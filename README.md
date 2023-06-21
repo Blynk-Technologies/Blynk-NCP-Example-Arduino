@@ -1,6 +1,6 @@
 # Blynk.NCP
 
-**Blynk.NCP** is a solution that off-loads network connectivity to a **Network Co-Processor (NCP)** in a [dual-Microcontroller Unit (MCU)](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present) setup, with the application/business logic residing on the **Primary MCU**.
+**Blynk.NCP** is a solution that off-loads network connectivity to a **Network Co-Processor (NCP)**, while the application/business logic resides on the **Primary MCU**. This implies a [dual-Microcontroller Unit (MCU)](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present) architecture.
 
 ## When to use Blynk.NCP?
 
@@ -24,7 +24,7 @@ Using Blynk.NCP is recommended if one of these is true:
   - Advanced network connection troubleshooting
 - **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud** GUI and backend
   - Both NCP and MCU firmware updates
-  - Local firmware upgrade using **Blynk.App** (during device activation by the end-customer)
+  - Local firmware upgrade using **Blynk.App** (during device activation by the end customer)
 
 Additional services that can be provided by the Blynk.NCP:
 
@@ -86,7 +86,7 @@ Ensure that the Blynk App is installed on your smartphone and scan this QR code:
 
 <img alt="Add New Device QR" src="./docs/Images/AddNewDeviceQR.png" width="250" />
 
-Alternatively: open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
+Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 
 ## Disclaimer
 
