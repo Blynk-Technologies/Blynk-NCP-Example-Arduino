@@ -6,7 +6,7 @@
 
 You will need:
 - Raspberry Pi Pico
-- One of the supported connectivity modules. See the table below
+- One of the [supported connectivity modules][supported_modules]
 - A breakout board for your connectivity module (in some cases)
 - Breadboard and some jumper wires
 
@@ -14,7 +14,7 @@ You will need:
 
 Please follow the official firmware flashing guide. This is usually provided by the module vendor.  
 Blynk.NCP is shipped as a combined firmware, so you only need to flash a single file (flash at address `0`).  
-Select the [firmware file, corresponding to your module type](https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Supported%20Modules.md).
+Select the [firmware file, corresponding to your module type][supported_modules].
 
 ## 2. Assemble the board
 
@@ -62,5 +62,5 @@ Please check out the [BlynkNcpDriver docs](https://github.com/blynkkk/BlynkNcpDr
 > The community edition of Blynk.NCP is available for personal use and evaluation.  
 If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
 
-
+[supported_modules]: https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Supported%20Modules.md
 [blynk_sales]: https://blynk.io/en/contact-us-business
