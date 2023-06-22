@@ -7,7 +7,7 @@
 You will need:
 - Raspberry Pi Pico
 - One of the [supported connectivity modules][supported_modules]
-- A breakout/adapter board for your connectivity module (in some cases)
+- An adapter/breakout board for your connectivity module (in some cases)
 - Breadboard and some jumper wires
 
 ## 1. Flash `Blynk.NCP` firmware to your connectivity module
