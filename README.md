@@ -100,11 +100,11 @@ Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find De
 [pio_cli]: https://docs.platformio.org/en/stable/core/index.html
 [restore]: ./docs/RestoreFirmware.md
 
-[1]: https://store.arduino.cc/products/arduino-nano-rp2040-connect
-[2]: https://store.arduino.cc/products/arduino-nano-33-iot
-[3]: https://store.arduino.cc/products/arduino-mkr-wifi-1010
-[4]: https://store.arduino.cc/products/uno-r4-wifi
-[5]: https://store.arduino.cc/products/portenta-c33
+[1]: https://store-usa.arduino.cc/products/arduino-nano-rp2040-connect
+[2]: https://store-usa.arduino.cc/products/arduino-nano-33-iot
+[3]: https://store-usa.arduino.cc/products/arduino-mkr-wifi-1010
+[4]: https://store-usa.arduino.cc/products/uno-r4-wifi
+[5]: https://store-usa.arduino.cc/products/portenta-c33
 [6]: https://www.lilygo.cc/products/lilygo%C2%AE-t-picoc3-esp32-c3-rp2040-1-14-inch-lcd-st7789v
 [7]: https://www.raspberrypi.com/products/raspberry-pi-pico
 [8]: https://www.waveshare.com/pico-esp8266.htm
