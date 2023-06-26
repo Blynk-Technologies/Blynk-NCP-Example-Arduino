@@ -56,7 +56,7 @@ You can also [add one of the supported connectivity modules](docs/BuildYourOwn.m
 
 ## Getting started
 
-This is a **PlatformIO** project. We recommend using [**VSCode**][pio_vscode] or [**PIO CLI**][pio_cli].  
+This is a **PlatformIO** project. We recommend using [**VSCode**][pio_vscode] or [**PIO CLI**][pio_cli].
 
 Flash the Blynk.NCP firmware:
 
@@ -64,8 +64,8 @@ Flash the Blynk.NCP firmware:
 pio run -e rp2040connect -t upload_ncp
 ```
 
-> **Note:** This overwrites both the MCU and the NINA module firmware.  
-You can [restore the stock firmware][restore] easily.
+> __Warning__: This overwrites both the Main MCU and the connectivity module firmware.  
+> You can [restore the stock firmware][restore] easily.
 
 Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
 
@@ -92,7 +92,7 @@ Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find De
 ## Disclaimer
 
 > The community edition of Blynk.NCP is available for personal use and evaluation.  
-If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
+> If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
 
 
 [blynk_sales]: https://blynk.io/en/contact-us-business
