@@ -3,6 +3,7 @@ import time
 import requests
 import fnmatch
 import json
+import subprocess
 
 Import("env")
 
@@ -14,6 +15,7 @@ class dotdict(dict):
 pioenv = env["PIOENV"]
 
 custom_ncp = dotdict({})
+custom_ncp.flasher      = env.GetProjectOption("custom_ncp.flasher", "BlynkNcpFlasher")
 custom_ncp.firmware     = env.GetProjectOption("custom_ncp.firmware", None)
 custom_ncp.upload_speed = env.GetProjectOption("custom_ncp.upload_speed", "460800")
 custom_ncp.manual_reset = env.GetProjectOption("custom_ncp.manual_reset", False)
@@ -38,6 +40,11 @@ Press [Enter] when ready.
 hint_reset = """
 Upload complete. Please power-cycle your device (remove the power completely).
 
+Press [Enter] when ready.
+"""
+
+hint_no_flasher = """
+Make sure that flasher utility is uploaded to the board.
 Press [Enter] when ready.
 """
 
@@ -118,8 +125,19 @@ def upload_ncp(*args, **kwargs):
 
     firmware = fetch_ncp(custom_ncp.firmware)
 
-    # Build and upload the flasher utility
-    check_exec(f"pio run -d tools/BlynkNcpFlasher -e {pioenv} --target upload")
+    if custom_ncp.flasher == "BlynkNcpFlasher":
+        # Build and upload the flasher utility
+        check_exec(f"pio run -d tools/BlynkNcpFlasher -e {pioenv} --target upload")
+    elif custom_ncp.flasher == "PrebuiltFlasher" and pioenv in ["portentaC33"]:
+        subprocess.run(["pio", "pkg", "exec",
+            "-p", "tool-dfuutil", "--", "dfu-util",
+            "--device", "0x2341:0x0068,:0x0368",
+            "-D", f"tools/PrebuiltFlasher/{pioenv}.bin",
+            "-a0", "--reset"])
+    elif custom_ncp.flasher == "none":
+        input(hint_no_flasher)
+    else:
+        raise Exception("custom_ncp.flasher is invalid")
 
     time.sleep(3)
     if custom_ncp.manual_reset:
@@ -135,7 +153,7 @@ def upload_ncp(*args, **kwargs):
           #"--flash_freq", "40m", TODO: f_flash
           "--flash_size", "detect",
           "--erase-all" if custom_ncp.erase_all else "",
-        "0", firmware
+        "0x0", firmware
     ]))
 
     if custom_ncp.manual_reset:

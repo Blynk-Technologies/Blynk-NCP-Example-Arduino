@@ -46,7 +46,7 @@ Board                            |                 | MCU      | NCP         | Co
 [Arduino Nano 33 IoT][2]         | `nano33iot`     | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
 [Arduino MKR WiFi 1010][3]       | `mkrwifi1010`   | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
 [Arduino UNO R4 WiFi][4]         | *soon*          | `RA4M1`  | `ESP32s3`   | WiFi 2.4     | BLE
-[Arduino Portenta C33][5]        | *soon*          | `RA4M1`  | `ESP32c3`   | WiFi 2.4     | BLE
+[Arduino Portenta C33][5]        | `portentaC33`   | `RA4M1`  | `ESP32c3`   | WiFi 2.4     | BLE
 [TTGO T-PicoC3][6]               | *soon*          | `RP2040` | `ESP32c3`   | WiFi 2.4     | BLE
 [RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `RP2040` | `ESP8266`   | WiFi 2.4     | WiFiAP
 
