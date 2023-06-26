@@ -58,14 +58,14 @@ You can also [add one of the supported connectivity modules](docs/BuildYourOwn.m
 
 This is a **PlatformIO** project. We recommend using [**VSCode**][pio_vscode] or [**PIO CLI**][pio_cli].
 
-> __Warning__: This overwrites both the Main MCU and the connectivity module firmware.  
-> You can [restore the stock firmware][restore] easily.
-
 Flash the Blynk.NCP firmware:
 
 ```sh
 pio run -e rp2040connect -t upload_ncp
 ```
+
+> __Warning__: This overwrites both the Main MCU and the connectivity module firmware.  
+> You can [restore the stock firmware][restore] easily.
 
 Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
 
