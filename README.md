@@ -33,7 +33,8 @@ Additional services that can be provided by the Blynk.NCP:
 - Connectivity-related device state indication - requires a monochrome/RGB/addressable LED attached to the NCP - `✅ ready`
 - User button, which also functions as a configuration reset - requires a momentary push button attached to the NCP - `✅ ready`
 - Non-volatile storage for [Preferences](https://github.com/vshymanskyy/Preferences) library - `⏳ soon`
-- File System storage- `⏳ soon`
+- File System storage - `🤔 considering`
+- Generic TCP/TLS socket API - `🤔 considering`
 - Factory testing and provisioning - `✅ ready`
 
 ## Supported boards
