@@ -42,8 +42,8 @@ This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
 Board                            |                 | 🔄 MCU      | 🔄 NCP        | 🌐            | ⚙️
 :--                              | ---             | :---        | :---          | :---         | :---
-[UNO R4 WiFi][1]                 | `unoR4wifi`¹    | `⏳ RA4M1`  | `✅ ESP32s3`   | WiFi 2.4     | BLE
-[Portenta C33][2]                | `portentaC33`¹  | `⏳ RA4M1`  | `✅ ESP32c3`   | WiFi 2.4     | BLE
+[UNO R4 WiFi][1]                 | `unoR4wifi`     | `⏳ RA4M1`  | `✅ ESP32s3`   | WiFi 2.4     | BLE
+[Portenta C33][2]                | `portentaC33`   | `⏳ RA4M1`  | `✅ ESP32c3`   | WiFi 2.4     | BLE
 [Nano RP2040 Connect][3]         | `rp2040connect` | `✅ RP2040` | `❌ NINA_W102` | WiFi 2.4     | BLE
 [Nano 33 IoT][4]                 | `nano33iot`     | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE
 [MKR WiFi 1010][5]               | `mkrwifi1010`   | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE
@@ -51,8 +51,6 @@ Board                            |                 | 🔄 MCU      | 🔄 NCP   
 [RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `✅ RP2040` | `✅ ESP8266`   | WiFi 2.4     | WiFiAP
 
 > 🔄 OTA updates, 🌐 Connectivity, ⚙️ Provisioning
-
-> ¹ PlatformIO currently does not support this board, but you can still flash the Blynk.NCP firmware using `upload_ncp`. Please use [this `Arduino IDE` example][arduino_ide] the Primary MCU.
 
 ## Custom boards
 
@@ -84,6 +82,8 @@ Build and flash the example project, run the serial monitor:
 pio run -e rp2040connect -t upload
 pio device monitor
 ```
+
+> __Note__: PlatformIO currently does not support `unoR4wifi` and `portentaC33`. You can still flash the Blynk.NCP firmware using `upload_ncp`, but please use [this `Arduino IDE` example][arduino_ide] the Primary MCU.
 
 ## Use the Blynk iOS/Android app to configure your new device
 
