@@ -42,13 +42,13 @@ This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
 Board                            |                 | MCU OTA     | NCP OTA       | Connectivity | Provisioning
 :--                              | ---             | :---        | :---          | ---          | ---
-[Arduino UNO R4 WiFi][1]         | `unoR4wifi`     | ⏳ `RA4M1`  | ✅ `ESP32s3`   | WiFi 2.4     | BLE
-[Arduino Portenta C33][2]        | `portentaC33`   | ⏳ `RA4M1`  | ✅ `ESP32c3`   | WiFi 2.4     | BLE
-[Arduino Nano RP2040 Connect][3] | `rp2040connect` | ✅ `RP2040` | ❌ `NINA-W102` | WiFi 2.4     | BLE
-[Arduino Nano 33 IoT][4]         | `nano33iot`     | ✅ `SAMD21` | ❌ `NINA-W102` | WiFi 2.4     | BLE
-[Arduino MKR WiFi 1010][5]       | `mkrwifi1010`   | ✅ `SAMD21` | ❌ `NINA-W102` | WiFi 2.4     | BLE
-[TTGO T-PicoC3][6]               | ⏳ *soon*       | ✅ `RP2040` | ✅ `ESP32c3`   | WiFi 2.4     | BLE
-[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | ✅ `RP2040` | ✅ `ESP8266`   | WiFi 2.4     | WiFiAP
+[Arduino UNO R4 WiFi][1]         | `unoR4wifi`     | `⏳ RA4M1`  | `✅ ESP32s3`   | WiFi 2.4     | BLE
+[Arduino Portenta C33][2]        | `portentaC33`   | `⏳ RA4M1`  | `✅ ESP32c3`   | WiFi 2.4     | BLE
+[Arduino Nano RP2040 Connect][3] | `rp2040connect` | `✅ RP2040` | `❌ NINA_W102` | WiFi 2.4     | BLE
+[Arduino Nano 33 IoT][4]         | `nano33iot`     | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE
+[Arduino MKR WiFi 1010][5]       | `mkrwifi1010`   | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE
+[TTGO T-PicoC3][6]               | ⏳ *soon*       | `✅ RP2040` | `✅ ESP32c3`   | WiFi 2.4     | BLE
+[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `✅ RP2040` | `✅ ESP8266`   | WiFi 2.4     | WiFiAP
 
 ## Custom boards
 
