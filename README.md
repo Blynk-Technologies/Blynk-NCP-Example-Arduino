@@ -51,7 +51,7 @@ Board                            |                 | 🔄 MCU      | 🔄 NCP   
 [RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `✅ RP2040` | `✅ ESP8266`   | WiFi 2.4     | WiFiAP
 
 > 🔄 OTA updates, 🌐 Connectivity, ⚙️ Provisioning  
-> ¹ PlatformIO currently does not support this board. Use this project to `upload_ncp`, then use [this `Arduino IDE` example][arduino_ide]
+> ¹ PlatformIO currently does not support this board. You can still flash the Blynk.NCP firmware using `upload_ncp`. For the Primary MCU,  [this `Arduino IDE` example][arduino_ide].
 
 ## Custom boards
 
