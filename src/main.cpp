@@ -13,7 +13,7 @@
 //#define BLYNK_NCP_BAUD              2000000
 //#define BLYNK_NCP_MACCHINA_SUPERB
 
-#include <BlynkNcpClient.h>
+#include <BlynkEdgentNCP.h>
 #include <ArduinoUtils.h>
 
 BlynkTimer timer;
