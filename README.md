@@ -40,15 +40,15 @@ Additional services that can be provided by the Blynk.NCP:
 
 This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
-Board                            |                 | MCU      | NCP         | Connectivity | Provisioning
-:--                              | ---             | :---     | :---        | ---          | ---
-[Arduino Nano RP2040 Connect][1] | `rp2040connect` | `RP2040` | `NINA-W102` | WiFi 2.4     | BLE
-[Arduino Nano 33 IoT][2]         | `nano33iot`     | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
-[Arduino MKR WiFi 1010][3]       | `mkrwifi1010`   | `SAMD21` | `NINA-W102` | WiFi 2.4     | BLE
-[Arduino UNO R4 WiFi][4]         | *soon*          | `RA4M1`  | `ESP32s3`   | WiFi 2.4     | BLE
-[Arduino Portenta C33][5]        | `portentaC33`   | `RA4M1`  | `ESP32c3`   | WiFi 2.4     | BLE
-[TTGO T-PicoC3][6]               | *soon*          | `RP2040` | `ESP32c3`   | WiFi 2.4     | BLE
-[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `RP2040` | `ESP8266`   | WiFi 2.4     | WiFiAP
+Board                            |                 | MCU OTA     | NCP OTA       | Connectivity | Provisioning
+:--                              | ---             | :---        | :---          | ---          | ---
+[Arduino UNO R4 WiFi][1]         | `unoR4wifi`     | ⏳ `RA4M1`  | ✅ `ESP32s3`   | WiFi 2.4     | BLE
+[Arduino Portenta C33][2]        | `portentaC33`   | ⏳ `RA4M1`  | ✅ `ESP32c3`   | WiFi 2.4     | BLE
+[Arduino Nano RP2040 Connect][3] | `rp2040connect` | ✅ `RP2040` | ❌ `NINA-W102` | WiFi 2.4     | BLE
+[Arduino Nano 33 IoT][4]         | `nano33iot`     | ✅ `SAMD21` | ❌ `NINA-W102` | WiFi 2.4     | BLE
+[Arduino MKR WiFi 1010][5]       | `mkrwifi1010`   | ✅ `SAMD21` | ❌ `NINA-W102` | WiFi 2.4     | BLE
+[TTGO T-PicoC3][6]               | ⏳ *soon*       | ✅ `RP2040` | ✅ `ESP32c3`   | WiFi 2.4     | BLE
+[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | ✅ `RP2040` | ✅ `ESP8266`   | WiFi 2.4     | WiFiAP
 
 ## Custom boards
 
@@ -100,11 +100,11 @@ Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find De
 [pio_cli]: https://docs.platformio.org/en/stable/core/index.html
 [restore]: ./docs/RestoreFirmware.md
 
-[1]: https://store-usa.arduino.cc/products/arduino-nano-rp2040-connect
-[2]: https://store-usa.arduino.cc/products/arduino-nano-33-iot
-[3]: https://store-usa.arduino.cc/products/arduino-mkr-wifi-1010
-[4]: https://store-usa.arduino.cc/products/uno-r4-wifi
-[5]: https://store-usa.arduino.cc/products/portenta-c33
+[1]: https://store-usa.arduino.cc/products/uno-r4-wifi
+[2]: https://store-usa.arduino.cc/products/portenta-c33
+[3]: https://store-usa.arduino.cc/products/arduino-nano-rp2040-connect
+[4]: https://store-usa.arduino.cc/products/arduino-nano-33-iot
+[5]: https://store-usa.arduino.cc/products/arduino-mkr-wifi-1010
 [6]: https://www.lilygo.cc/products/lilygo%C2%AE-t-picoc3-esp32-c3-rp2040-1-14-inch-lcd-st7789v
 [7]: https://www.raspberrypi.com/products/raspberry-pi-pico
 [8]: https://www.waveshare.com/pico-esp8266.htm
