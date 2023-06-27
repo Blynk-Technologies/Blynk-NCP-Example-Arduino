@@ -43,7 +43,7 @@ This example project is compatible with a set of ready-to-use Dual-MCU boards:
 Board                            |                 | MCU 🔄      | NCP 🔄        | 🌐            | ⚙️
 :--                              | ---             | :---        | :---          | :---         | :---
 [UNO R4 WiFi][1]                 | `unoR4wifi`     | `⏳ RA4M1`  | `✅ ESP32s3`   | WiFi 2.4     | BLE
-[Portenta C33][2]                | `portentaC33`   | `⏳ RA4M1`  | `✅ ESP32c3`   | WiFi 2.4     | BLE
+[Portenta C33][2]                | `portentaC33`   | `⏳ RA6M5`  | `✅ ESP32c3`   | WiFi 2.4     | BLE
 [Nano RP2040 Connect][3]         | `rp2040connect` | `✅ RP2040` | `❌ NINA_W102` | WiFi 2.4     | BLE
 [Nano 33 IoT][4]                 | `nano33iot`     | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE
 [MKR WiFi 1010][5]               | `mkrwifi1010`   | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE
