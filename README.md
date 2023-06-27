@@ -30,12 +30,12 @@ Using Blynk.NCP is recommended if one of these is true:
 Additional services that can be provided by the Blynk.NCP:
 
 - Persistent automations (automation scenarios that work even if the device is offline) - `⏳ soon`
-- Connectivity-related device state indication - requires a monochrome/RGB/addressable LED attached to the NCP - `✅ ready`
-- User button, which also functions as a configuration reset - requires a momentary push button attached to the NCP - `✅ ready`
+- Connectivity-related **device state indication** - requires a monochrome/RGB/addressable LED attached to the NCP - `✅ ready`
+- **User button**, which also functions as a configuration reset - requires a momentary push button attached to the NCP - `✅ ready`
 - Non-volatile storage for [Preferences](https://github.com/vshymanskyy/Preferences) library - `⏳ soon`
 - File System storage - `🤔 considering`
 - Generic TCP/TLS socket API - `🤔 considering`
-- Factory testing and provisioning - `✅ ready`
+- **Factory testing** and provisioning - `✅ ready`
 
 ## Supported boards
 
