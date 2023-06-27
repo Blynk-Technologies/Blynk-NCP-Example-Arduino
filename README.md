@@ -40,7 +40,7 @@ Additional services that can be provided by the Blynk.NCP:
 
 This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
-Board                            |                 | MCU 🔄      | NCP 🔄        | 🌐            | ⚙️
+Board                            |                 | 🔄 of MCU   | 🔄 of NCP      | 🌐            | ⚙️
 :--                              | ---             | :---        | :---          | :---         | :---
 [UNO R4 WiFi][1]                 | `unoR4wifi`     | `⏳ RA4M1`  | `✅ ESP32s3`   | WiFi 2.4     | BLE
 [Portenta C33][2]                | `portentaC33`   | `⏳ RA6M5`  | `✅ ESP32c3`   | WiFi 2.4     | BLE
