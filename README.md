@@ -52,7 +52,7 @@ Board                            |                 | 🔄 MCU      | 🔄 NCP   
 
 > 🔄 OTA updates, 🌐 Connectivity, ⚙️ Provisioning
 
-> ¹ PlatformIO currently does not support this board. You can still flash the Blynk.NCP firmware using `upload_ncp`. For the Primary MCU,  [this `Arduino IDE` example][arduino_ide].
+> ¹ PlatformIO currently does not support this board. You can still flash the Blynk.NCP firmware using `upload_ncp`. Please use [this `Arduino IDE` example][arduino_ide] the Primary MCU.
 
 ## Custom boards
 
