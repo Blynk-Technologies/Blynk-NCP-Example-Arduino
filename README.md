@@ -17,12 +17,11 @@ Using Blynk.NCP is recommended if one of these is true:
 - **Blynk.Inject**: connect your devices easily using **Blynk.App** (iOS/Android) or **Blynk.Console** (Web Dashboard)
   - `BLE`-assisted device provisioning for the best end-user experience
   - `WiFiAP`-based provisioning for devices without BLE support
+  - Network Manager: WiFi (up to 16 saved networks), Ethernet, Cellular (depending on the hardware)
+  - Advanced network connection troubleshooting
 - Secure **Blynk.Cloud** connection that provides simple API for:
   - Data transfer with Virtual Pins, reporting Events, and accessing Metadata
   - `Time`, `Timezone` and `Location`, with an ability to track local time when the device is offline, including DST transitions
-- Network Manager:
-  - WiFi (up to 16 saved networks), Ethernet, Cellular (depending on the hardware)
-  - Advanced network connection troubleshooting
 - **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud** GUI and backend
   - Both NCP and MCU firmware updates
   - Local firmware upgrade using **Blynk.App** (during device activation by the end customer)
