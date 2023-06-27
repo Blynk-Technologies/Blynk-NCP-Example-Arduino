@@ -33,8 +33,8 @@ Additional services that can be provided by the Blynk.NCP:
 - `✅ ready` Connectivity-related **device state indication** - requires a monochrome/RGB/addressable LED attached to the NCP
 - `✅ ready` **User button** (also used for configuration reset) - requires a momentary push button attached to the NCP
 - `✅ ready` **Factory testing** and provisioning
-- `🤔 considering` File System storage
-- `🤔 considering` Generic TCP/TLS socket API
+- `🤔 later` File System storage
+- `🤔 later` Generic TCP/TLS socket API
 
 ## Supported boards
 
@@ -83,7 +83,8 @@ pio run -e rp2040connect -t upload
 pio device monitor
 ```
 
-> __Note__: PlatformIO currently does not support `unoR4wifi` and `portentaC33`. You can still flash the Blynk.NCP firmware using `upload_ncp`, but please use [this `Arduino IDE` example][arduino_ide] the Primary MCU.
+> __Note__: PlatformIO currently does not support `unoR4wifi` and `portentaC33`.  
+> You can still flash the Blynk.NCP firmware using `upload_ncp`, but please use [this `Arduino IDE` example][arduino_ide] for the Primary MCU.
 
 ## Use the Blynk iOS/Android app to configure your new device
 
