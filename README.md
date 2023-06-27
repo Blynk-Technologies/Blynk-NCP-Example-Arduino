@@ -42,8 +42,8 @@ This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
 Board                            |                 | 🔄 MCU      | 🔄 NCP        | 🌐            | ⚙️
 :--                              | ---             | :---        | :---          | :---         | :---
-[Arduino UNO R4 WiFi][1]         | `unoR4wifi`     | `⏳ RA4M1`  | `✅ ESP32s3`   | WiFi 2.4     | BLE
-[Arduino Portenta C33][2]        | `portentaC33`   | `⏳ RA4M1`  | `✅ ESP32c3`   | WiFi 2.4     | BLE
+[Arduino UNO R4 WiFi][1]         | `unoR4wifi`¹    | `⏳ RA4M1`  | `✅ ESP32s3`   | WiFi 2.4     | BLE
+[Arduino Portenta C33][2]        | `portentaC33`¹  | `⏳ RA4M1`  | `✅ ESP32c3`   | WiFi 2.4     | BLE
 [Arduino Nano RP2040 Connect][3] | `rp2040connect` | `✅ RP2040` | `❌ NINA_W102` | WiFi 2.4     | BLE
 [Arduino Nano 33 IoT][4]         | `nano33iot`     | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE
 [Arduino MKR WiFi 1010][5]       | `mkrwifi1010`   | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE
@@ -51,6 +51,7 @@ Board                            |                 | 🔄 MCU      | 🔄 NCP   
 [RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `✅ RP2040` | `✅ ESP8266`   | WiFi 2.4     | WiFiAP
 
 > 🔄 OTA updates, 🌐 Connectivity, ⚙️ Provisioning
+> ¹ PlatformIO currently does not support this board. Use this project to `upload_ncp`, then use [this `Arduino IDE` example][arduino_ide]
 
 ## Custom boards
 
@@ -101,6 +102,7 @@ Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find De
 [pio_vscode]: https://docs.platformio.org/en/stable/integration/ide/vscode.html#ide-vscode
 [pio_cli]: https://docs.platformio.org/en/stable/core/index.html
 [restore]: ./docs/RestoreFirmware.md
+[arduino_ide]: https://github.com/blynkkk/blynk-library/blob/master/examples/Blynk.Edgent/Edgent_NCP/Edgent_NCP.ino
 
 [1]: https://store-usa.arduino.cc/products/uno-r4-wifi
 [2]: https://store-usa.arduino.cc/products/portenta-c33
