@@ -3,6 +3,7 @@
 //#define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
 //#define BLYNK_TEMPLATE_NAME         "Device"
 
+/* The firmware version of the Primary MCU (used for OTA updates) */
 #define BLYNK_FIRMWARE_VERSION        "0.1.0"
 
 // Debug output
