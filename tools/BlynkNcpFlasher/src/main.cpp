@@ -128,12 +128,41 @@ void ncpRun() {
 #endif
 
 /*
+ * LED
+ */
+
+#if !defined(LED_PIN) && defined(LED_BUILTIN)
+  #define LED_PIN LED_BUILTIN
+#endif
+
+void ledInit() {
+#if defined(LED_PIN)
+  pinMode(LED_PIN, OUTPUT); digitalWrite(LED_PIN, HIGH);
+#endif
+}
+
+void ledOFF() {
+  digitalWrite(LED_PIN, HIGH);
+}
+
+void ledToggle() {
+  uint32_t now = millis();
+  static uint32_t last_toggle = now;
+  if (now - last_toggle > 100) {
+    last_toggle = now;
+    digitalWrite(LED_PIN, !digitalRead(LED_PIN));
+  }
+}
+
+
+/*
  * Main
  */
 
 void setup() {
   Serial.begin(baud);
 
+  ledInit();
   ncpInit();
 }
 
@@ -146,11 +175,13 @@ void loop() {
     unsigned len = min(Serial.available(), sizeof(buffer));
     Serial.readBytes(buffer, len);
     SerialNCP.write(buffer, len);
+    ledToggle();
   }
 
   if (SerialNCP.available() > 0) {
     unsigned len = min(SerialNCP.available(), sizeof(buffer));
     SerialNCP.readBytes(buffer, len);
     Serial.write(buffer, len);
+    ledToggle();
   }
 }

@@ -55,7 +55,12 @@ void ledOFF() {
 }
 
 void ledToggle() {
-  digitalWrite(LED_PIN, !digitalRead(LED_PIN));
+  uint32_t now = millis();
+  static uint32_t last_toggle = now;
+  if (now - last_toggle > 100) {
+    last_toggle = now;
+    digitalWrite(LED_PIN, !digitalRead(LED_PIN));
+  }
 }
 
 void setup() {
