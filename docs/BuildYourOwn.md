@@ -33,7 +33,11 @@ The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provide
     #define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
     #define BLYNK_TEMPLATE_NAME         "MyDevice"
     ```
-3. Run the example on your **Primary MCU**. The expected debug output looks like this:
+3. Run the example on your **Primary MCU**:
+    ```sh
+    pio run -e pico -t upload -t monitor
+    ```
+   The expected debug output looks like this:
     ```log
     [1345] NCP responding (baud 115200, 2289 us)
     [1349] Blynk.NCP firmware: 0.4.6
