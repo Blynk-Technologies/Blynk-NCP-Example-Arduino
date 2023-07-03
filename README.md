@@ -36,7 +36,7 @@ Additional services that can be provided by the Blynk.NCP:
 - `✅ ready` **User button** (also used for configuration reset) - requires a momentary push button attached to the NCP
 - `✅ ready` **Factory testing** and provisioning
 - `🤔 later` File System storage
-- `🤔 later` Generic TCP/TLS socket API
+- `🤔 later` Generic UDP/TCP/TLS socket API
 
 ## Supported boards
 
