@@ -31,7 +31,7 @@ Additional services that can be provided by the Blynk.NCP:
 
 - `⏳ soon` Persistent automations (automation scenarios that work even if the device is offline)
 - `⏳ soon` Non-volatile storage for [Preferences](https://github.com/vshymanskyy/Preferences) library
-- `⏳ soon` NCP-assisted [fail-safe OTA updates](https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Firmware%20Upgrade.md#ncp-assisted-fail-safe-ota-updates)
+- `✅ ready` NCP-assisted [fail-safe OTA updates](https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Firmware%20Upgrade.md#ncp-assisted-fail-safe-ota-updates)
 - `✅ ready` Connectivity-related **device state indication** - requires a monochrome/RGB/addressable LED attached to the NCP
 - `✅ ready` **User button** (also used for configuration reset) - requires a momentary push button attached to the NCP
 - `✅ ready` **Factory testing** and provisioning
