@@ -62,5 +62,5 @@ Please check out the [BlynkNcpDriver docs](https://github.com/blynkkk/BlynkNcpDr
 > The community edition of Blynk.NCP is available for personal use and evaluation.  
 If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
 
-[supported_modules]: https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Supported%20Modules.md
+[supported_modules]: https://docs.blynk.io/en/getting-started/supported-boards#connectivity-modules-supported-by-blynk.ncp
 [blynk_sales]: https://blynk.io/en/contact-us-business
