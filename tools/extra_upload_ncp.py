@@ -19,7 +19,7 @@ custom_ncp.flasher      = env.GetProjectOption("custom_ncp.flasher", "BlynkNcpFl
 custom_ncp.firmware     = env.GetProjectOption("custom_ncp.firmware", None)
 custom_ncp.upload_speed = env.GetProjectOption("custom_ncp.upload_speed", "460800")
 custom_ncp.manual_reset = env.GetProjectOption("custom_ncp.manual_reset", False)
-custom_ncp.erase_all    = env.GetProjectOption("custom_ncp.erase_all", False)
+custom_ncp.erase_all    = env.GetProjectOption("custom_ncp.erase_all", True)
 if custom_ncp.manual_reset:
     custom_ncp.before_upload = env.GetProjectOption("custom_ncp.before_upload",  "no_reset")
     custom_ncp.after_upload  = env.GetProjectOption("custom_ncp.after_upload",   "no_reset")
@@ -123,7 +123,7 @@ def upload_ncp(*args, **kwargs):
     if custom_ncp.firmware is None:
         raise Exception("custom_ncp.firmware not specified")
 
-    firmware = fetch_ncp(custom_ncp.firmware)
+    firmware = fetch_ncp(f"BlynkNCP_{custom_ncp.firmware}.flash.bin")
 
     if custom_ncp.flasher == "BlynkNcpFlasher":
         # Build and upload the flasher utility
@@ -136,6 +136,8 @@ def upload_ncp(*args, **kwargs):
             "-a0", "--reset"])
     elif custom_ncp.flasher == "none":
         input(hint_no_flasher)
+    elif custom_ncp.flasher == "direct":
+        pass
     else:
         raise Exception("custom_ncp.flasher is invalid")
 
