@@ -42,17 +42,17 @@ Additional services that can be provided by the Blynk.NCP:
 
 This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
-Board                            |                 | OTA for MCU | OTA for NCP   | 🌐            | ⚙️      | 🗃️
-:--                              | ---             | :---        | :---          | :---         | :---    | :---
-[UNO R4 WiFi][1]                 | `unoR4wifi`     | `⏳ RA4M1`  | `✅ ESP32s3`   | WiFi 2.4     | BLE     | 4.25 MB
-[Portenta C33][2]                | `portentaC33`   | `⏳ RA6M5`  | `✅ ESP32c3`   | WiFi 2.4     | BLE     | 512 KB
-[Nano RP2040 Connect][3]         | `rp2040connect` | `✅ RP2040` | `❌ NINA_W102` | WiFi 2.4     | BLE     | 384 KB
-[Nano 33 IoT][4]                 | `nano33iot`     | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE     | 384 KB
-[MKR WiFi 1010][5]               | `mkrwifi1010`   | `✅ SAMD21` | `❌ NINA_W102` | WiFi 2.4     | BLE     | 384 KB
-[T-PicoC3][6]                    | ⏳ *soon*       | `✅ RP2040` | `✅ ESP32c3`   | WiFi 2.4     | BLE     | 512 KB
-[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `✅ RP2040` | `✅ ESP8266`   | WiFi 2.4     | WiFiAP  | 1000 KB
+Board                            |                 | 🔄 MCU / NCP   | 🌐            | ⚙️      | 🗃️
+:--                              | ---             | :---           | :---         | :---    | :---
+[UNO R4 WiFi][1]                 | `unoR4wifi`     | `⏳ / ✅`      | WiFi 2.4     | BLE     | 4.25 MB
+[Portenta C33][2]                | `portentaC33`   | `⏳ / ✅`      | WiFi 2.4     | BLE     | 512 KB
+[Nano RP2040 Connect][3]         | `rp2040connect` | `✅ / ❌`      | WiFi 2.4     | BLE     | 384 KB
+[Nano 33 IoT][4]                 | `nano33iot`     | `✅ / ❌`      | WiFi 2.4     | BLE     | 384 KB
+[MKR WiFi 1010][5]               | `mkrwifi1010`   | `✅ / ❌`      | WiFi 2.4     | BLE     | 384 KB
+[T-PicoC3][6]                    | ⏳ *soon*       | `✅ / ✅`      | WiFi 2.4     | BLE     | 512 KB
+[RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `✅ / ✅`      | WiFi 2.4     | WiFiAP  | 1000 KB
 
-> 🌐 Connectivity, ⚙️ Provisioning, 🗃️ File System
+🔄 Over-the-Air Updates, 🌐 Connectivity, ⚙️ Provisioning, 🗃️ File System
 
 ## Custom boards
 
