@@ -46,7 +46,7 @@ The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provide
    The expected debug output looks like this:
     ```log
     [1345] NCP responding (baud 115200, 2289 us)
-    [1349] Blynk.NCP firmware: 0.4.6
+    [1349] Blynk.NCP firmware: 0.5.0
     [1684] State: Configuration
     ```
 
