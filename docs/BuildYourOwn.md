@@ -16,6 +16,12 @@ Please follow the official firmware flashing guide. This is usually provided by 
 Blynk.NCP is shipped as a combined firmware, so you only need to flash a single file (flash at address `0`).  
 Select the [firmware file, corresponding to your module type][supported_modules].
 
+To verify that `Blynk.NCP` is flashed correctly and running, check the UART output of the module, right after the power-up:
+```log
+<...bootloader output...>
+[rpc port] Blynk.NCP started
+```
+
 ## 2. Assemble the board
 
 Connect Blynk.NCP to the Primary MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040`, `ATSAMD`, `K210`, ...) using UART.  
