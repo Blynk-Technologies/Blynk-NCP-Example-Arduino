@@ -5,6 +5,7 @@
 ## Components Used in This Project
 
 You will need:
+
 - Raspberry Pi Pico
 - One of the [supported connectivity modules][supported_modules]
 - An adapter/breakout board for your connectivity module (in some cases)
@@ -17,6 +18,7 @@ Blynk.NCP is shipped as a combined firmware, so you only need to flash a single 
 Select the [firmware file, corresponding to your module type][supported_modules].
 
 To verify that `Blynk.NCP` is flashed correctly and running, check the UART output of the module, right after the power-up:
+
 ```log
 <...bootloader output...>
 [rpc port] Blynk.NCP started
@@ -35,15 +37,18 @@ The official [`Blynk library`](https://github.com/blynkkk/blynk-library) provide
 
 1. Use [this example](https://github.com/blynkkk/BlynkNcpExample)
 2. Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
+
     ```cpp
     #define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
     #define BLYNK_TEMPLATE_NAME         "MyDevice"
     ```
 3. Run the example on your **Primary MCU**:
+
     ```sh
     pio run -e pico -t upload -t monitor
     ```
    The expected debug output looks like this:
+
     ```log
     [1345] NCP responding (baud 115200, 2289 us)
     [1349] Blynk.NCP firmware: x.x.x
