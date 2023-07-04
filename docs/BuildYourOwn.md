@@ -17,7 +17,7 @@ Please follow the official firmware flashing guide. This is usually provided by 
 Blynk.NCP is shipped as a combined firmware, so you only need to flash a single file (flash at address `0`).  
 Select the [firmware file, corresponding to your module type][supported_modules].
 
-To verify that `Blynk.NCP` is flashed correctly and running, check the UART output of the module, right after the power-up:
+To verify that `Blynk.NCP` is flashed correctly and running, check the UART output (115200 8N1) of the module, right after the power-up:
 
 ```log
 <...bootloader output...>
