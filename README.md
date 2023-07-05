@@ -23,9 +23,9 @@ Using Blynk.NCP is recommended if one of these is true:
 - Secure **Blynk.Cloud** connection that provides simple API for:
   - Data transfer with Virtual Pins, reporting Events, and accessing Metadata
   - `Time`, `Timezone` and `Location`, with an ability to track local time when the device is offline, including DST transitions
-- **Blynk.Air** - automatic Over The Air firmware updates using **Blynk.Cloud** GUI and backend
+- **Blynk.Air** - automatic Over The Air firmware updates using Web Dashboard
   - Both NCP and the Primary MCU firmware updates
-  - Local firmware upgrade using **Blynk.App** (during device activation by the end customer)
+  - Direct firmware upgrade using iOS/Android App (during device activation by the end customer)
 
 Additional services that can be provided by the Blynk.NCP:
 
