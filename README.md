@@ -18,7 +18,7 @@ Using Blynk.NCP is recommended if one of these is true:
 [<img src="https://cdn.rawgit.com/simple-icons/simple-icons/develop/icons/apple.svg" width="16" height="16" /> iOS App](https://apps.apple.com/us/app/blynk-iot/id1559317868) or [🌐 Web Dashboard](https://blynk.cloud)
   - `BLE`-assisted device provisioning for the best end-user experience
   - `WiFiAP`-based provisioning for devices without BLE support
-  - Network Manager: WiFi (up to 16 saved networks), Ethernet, Cellular (depending on the hardware)
+  - **Network Manager**: WiFi (up to 16 saved networks), Ethernet, Cellular (depending on the hardware)
   - Advanced network connection troubleshooting
 - Secure **Blynk.Cloud** connection that provides simple API for:
   - Data transfer with Virtual Pins, reporting Events, and accessing Metadata
