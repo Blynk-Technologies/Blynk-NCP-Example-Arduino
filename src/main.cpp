@@ -28,6 +28,7 @@ void setup() {
   waitSerialConsole(Serial);
 
   BLYNK_LOG("Main firmware: %s", BLYNK_FIRMWARE_VERSION);
+  BLYNK_LOG("Build: %s", __DATE__ " " __TIME__);
 
   // Initialize the Blynk.NCP hardware
   if (Blynk.initNCP()) {
@@ -58,4 +59,5 @@ void setup() {
 void loop() {
   timer.run();
   Blynk.run();
+  delay(1);
 }
