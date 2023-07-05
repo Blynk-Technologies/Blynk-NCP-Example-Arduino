@@ -19,7 +19,16 @@ jobs:
           python-version: '3.9'
       - name: Install PlatformIO Core
         run: pip install --upgrade platformio
-
+      # needed for [env:linux] build
+      - name: Install Dependencies (libserialport)
+        run: |
+            git clone git://sigrok.org/libserialport
+            cd libserialport/
+            ./autogen.sh
+            ./configure
+            make -j4
+            sudo make install
+            cd ..
       - name: Build PlatformIO Project
         run: |
           # uncomment the #define BLYNK_TEMPLATE etc. to not get compile errors
