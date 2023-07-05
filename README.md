@@ -85,9 +85,6 @@ pio run -e rp2040connect -t upload
 pio device monitor
 ```
 
-> __Note__: PlatformIO currently does not support `unoR4wifi` and `portentaC33`.  
-> You can still flash the Blynk.NCP firmware using `upload_ncp`, but please use [this `Arduino IDE` example][arduino_ide] for the Primary MCU.
-
 ## Use the Blynk iOS/Android app to configure your new device
 
 Ensure that the Blynk App is installed on your smartphone and scan this QR code:
