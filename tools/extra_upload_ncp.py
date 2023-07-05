@@ -98,19 +98,24 @@ def get_release_info(release):
 
     return data
 
-def get_download_url(filename, release = None):
-    data = get_release_info(release)
-
-    for asset in data["assets"]:
+def get_download_url(filename, release_info):
+    for asset in release_info["assets"]:
         asset_name = asset["name"]
         if fnmatch.fnmatch(asset_name, filename):
-            return (asset_name, data["tag_name"], asset["browser_download_url"])
+            return (asset_name, asset["browser_download_url"])
 
-    raise Exception("Cannot download Blynk.NCP firmware")
+    tag = release_info["tag_name"]
+    raise Exception(f"{filename} not found in Blynk.NCP {tag}")
 
 def fetch_ncp(filename, release = None):
-    (fn, tagname, url) = get_download_url(filename, release)
-    ncp_path = f".pio/BlynkNCP/{tagname}/"
+    release_info = get_release_info(release)
+    tag = release_info["tag_name"]
+    ncp_path = f".pio/BlynkNCP/{tag}/"
+    ncp_full = ncp_path + filename
+    if os.path.exists(ncp_full):
+        return ncp_full
+
+    (fn, url) = get_download_url(filename, release_info)
     ncp_full = ncp_path + fn
     if not os.path.exists(ncp_full):
         print(f"Downloading {fn} ...")
