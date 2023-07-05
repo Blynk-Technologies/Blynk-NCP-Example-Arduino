@@ -133,12 +133,6 @@ def upload_ncp(*args, **kwargs):
     if custom_ncp.flasher == "BlynkNcpFlasher":
         # Build and upload the flasher utility
         check_exec(f"pio run -d tools/BlynkNcpFlasher -e {pioenv} --target upload")
-    elif custom_ncp.flasher == "dfu-util":
-        subprocess.run(["pio", "pkg", "exec",
-            "-p", "tool-dfuutil", "--", "dfu-util",
-            "--device", env.GetProjectOption("custom_ncp.flasher.device"),
-            "-D", f"tools/PrebuiltFlasher/{pioenv}.bin",
-            "-a0", "--reset"])
     elif custom_ncp.flasher == "none":
         input(hint_no_flasher)
     elif custom_ncp.flasher == "direct":
