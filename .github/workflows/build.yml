@@ -1,0 +1,36 @@
+name: PlatformIO CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.platformio/.cache
+          key: ${{ runner.os }}-pio
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install PlatformIO Core
+        run: pip install --upgrade platformio
+      # needed for [env:linux] build
+      - name: Install Dependencies (libserialport)
+        run: |
+            git clone git://sigrok.org/libserialport
+            cd libserialport/
+            ./autogen.sh
+            ./configure
+            make -j4
+            sudo make install
+            cd ..
+      - name: Build PlatformIO Project
+        run: |
+          # uncomment the #define BLYNK_TEMPLATE etc. to not get compile errors
+          sed -i 's\//#define BLYNK_\#define BLYNK_\g' src/main.cpp
+          pio run
