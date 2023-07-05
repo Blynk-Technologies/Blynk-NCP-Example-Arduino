@@ -44,6 +44,8 @@ void setup() {
     BLYNK_LOG("State: %s", Blynk.getStateString());
   });
 
+  Blynk.setConfigTimeout(30*60); // 30 minutes
+
   // White labeling
   //Blynk.setVendorPrefix("MyCompany");
   //Blynk.setVendorServer("dashboard.mycompany.com");
