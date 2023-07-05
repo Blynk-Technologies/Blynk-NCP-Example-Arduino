@@ -25,7 +25,7 @@ Using Blynk.NCP is recommended if one of these is true:
   - `Time`, `Timezone` and `Location`, with an ability to track local time when the device is offline, including DST transitions
 - **Blynk.Air** - automatic Over The Air firmware updates using Web Dashboard
   - Both NCP and the Primary MCU firmware updates
-  - Direct firmware upgrade using iOS/Android App (before device activation)
+  - Direct firmware upgrade using iOS/Android App, before device activation
 
 Additional services that can be provided by the Blynk.NCP:
 
