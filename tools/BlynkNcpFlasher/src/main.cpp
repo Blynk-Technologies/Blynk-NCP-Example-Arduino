@@ -1,8 +1,21 @@
 #include <Arduino.h>
 
-#if defined(ARDUINO_NANO_RP2040_CONNECT) || \
-    defined(ARDUINO_SAMD_NANO_33_IOT)    || \
-    defined(ARDUINO_SAMD_MKRWIFI1010)
+#if !defined(SerialNCP)
+    #define SerialPC Serial
+#endif
+
+void ledOFF();
+void ledToggle();
+
+#ifdef SerialNCP
+
+    // Good, use the specified SerialNCP
+
+    void ncpInit() {}
+
+#elif defined(ARDUINO_NANO_RP2040_CONNECT) || \
+      defined(ARDUINO_SAMD_NANO_33_IOT)    || \
+      defined(ARDUINO_SAMD_MKRWIFI1010)
 
     #define SerialNCP SerialNina
 
@@ -17,30 +30,7 @@
       pinMode(NINA_RESETN, OUTPUT);
     }
 
-    void ncpRun() {
-      if (rts != Serial.rts()) {
-        rts = Serial.rts();
-    #if defined(ARDUINO_SAMD_NANO_33_IOT)
-        digitalWrite(NINA_RESETN, rts ? LOW : HIGH);
-    #else
-        digitalWrite(NINA_RESETN, rts ? HIGH : LOW);
-    #endif
-      }
-
-      if (dtr != Serial.dtr()) {
-        dtr = Serial.dtr();
-        digitalWrite(NINA_GPIO0, (dtr == 0) ? HIGH : LOW);
-      }
-
-      // check if the USB virtual serial wants a new baud rate
-      if (Serial.baud() != baud) {
-        rts = -1;
-        dtr = -1;
-
-        baud = Serial.baud();
-        SerialNCP.begin(baud);
-      }
-    }
+    #include "loop_nina.h"
 
 #elif defined(ARDUINO_AVR_UNO_WIFI_REV2)
 
@@ -64,8 +54,7 @@
       digitalWrite(NINA_RESETN, LOW);
     }
 
-    void ncpRun() {
-    }
+    #include "loop_simple.h"
 
 #elif defined(ARDUINO_SAMD_MKRVIDOR4000)
 
@@ -85,25 +74,66 @@
       FPGA.pinMode(FPGA_SPIWIFI_RESET, OUTPUT);
     }
 
-    void ncpRun() {
-      if (rts != Serial.rts()) {
-        rts = Serial.rts();
-        FPGA.digitalWrite(FPGA_SPIWIFI_RESET, (rts == 1) ? LOW : HIGH);
-      }
+    #include "loop_vidor.h"
 
-      if (dtr != Serial.dtr()) {
-        dtr = Serial.dtr();
-        FPGA.digitalWrite(FPGA_NINA_GPIO0, (dtr == 1) ? HIGH : LOW);
-      }
+#elif defined(ARDUINO_UNOWIFIR4)
 
-      // check if the USB virtual serial wants a new baud rate
-      if (Serial.baud() != baud) {
-        rts = -1;
-        dtr = -1;
+    #undef  SerialPC
+    #define SerialPC        SerialUSB
+    #define SerialNCP       Serial2
 
-        baud = Serial.baud();
-      }
+    unsigned long baud = 9600;
+    int rts = -1;
+    int dtr = -1;
+
+    void ncpInit() {
+      SerialNCP.begin(baud);
     }
+
+    #include "loop_renesas.h"
+
+#elif defined(ARDUINO_UNOR4_MINIMA)
+
+    #define SerialNCP       Serial1
+
+    unsigned long baud = 9600;
+    int rts = -1;
+    int dtr = -1;
+
+    void ncpInit() {
+      SerialNCP.begin(baud);
+    }
+
+    #include "loop_renesas.h"
+
+#elif defined(ARDUINO_PORTENTA_C33)
+
+    #define SerialNCP       Serial5
+    #define NCP_PIN_GPIO0   (100)
+    #define NCP_PIN_RESETN  (101)
+    #define LED_PIN         LEDB
+
+    unsigned long baud = 9600;
+    int rts = -1;
+    int dtr = -1;
+
+    void ncpInit() {
+      SerialNCP.begin(baud);
+
+      pinMode(LEDR, OUTPUT); digitalWrite(LEDR, HIGH);
+      pinMode(LEDG, OUTPUT); digitalWrite(LEDG, HIGH);
+
+      pinMode(NCP_PIN_GPIO0, OUTPUT);
+      pinMode(NCP_PIN_RESETN, OUTPUT);
+
+      digitalWrite(NCP_PIN_GPIO0, HIGH);
+      delay(100);
+      digitalWrite(NCP_PIN_RESETN, HIGH);
+      digitalWrite(NCP_PIN_RESETN, LOW);
+      digitalWrite(NCP_PIN_RESETN, HIGH);
+    }
+
+    #include "loop_renesas.h"
 
 #elif defined(ARDUINO_RASPBERRY_PI_PICO)
 
@@ -115,13 +145,7 @@
       SerialNCP.begin(baud);
     }
 
-    void ncpRun() {
-      // check if the USB virtual serial wants a new baud rate
-      if (Serial.baud() != baud) {
-        baud = Serial.baud();
-        SerialNCP.begin(baud);
-      }
-    }
+    #include "loop_baud_check.h"
 
 #else
     #error "Platform not supported"
@@ -160,28 +184,9 @@ void ledToggle() {
  */
 
 void setup() {
-  Serial.begin(baud);
+  SerialPC.begin(baud);
 
   ledInit();
   ncpInit();
 }
 
-void loop() {
-  ncpRun();
-
-  static char buffer[512];
-
-  if (Serial.available() > 0) {
-    unsigned len = min(Serial.available(), sizeof(buffer));
-    Serial.readBytes(buffer, len);
-    SerialNCP.write(buffer, len);
-    ledToggle();
-  }
-
-  if (SerialNCP.available() > 0) {
-    unsigned len = min(SerialNCP.available(), sizeof(buffer));
-    SerialNCP.readBytes(buffer, len);
-    Serial.write(buffer, len);
-    ledToggle();
-  }
-}
