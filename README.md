@@ -2,7 +2,7 @@
 # Blynk.NCP
 
 [![Issues](https://img.shields.io/github/issues/blynkkk/BlynkNcpExample.svg)](https://github.com/blynkkk/BlynkNcpExample/issues)
-[![PlatformIO CI](https://github.com/blynkkk/BlynkNcpExample/actions/workflows/build.yml/badge.svg)](https://github.com/blynkkk/BlynkNcpExample/actions/workflows/build.yml)
+[![PlatformIO CI](https://img.shields.io/github/actions/workflow/status/blynkkk/BlynkNcpExample/build.yml)](https://github.com/blynkkk/BlynkNcpExample/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/blynkkk/BlynkNcpExample)](LICENSE)
 
 **Blynk.NCP** is a solution that off-loads network connectivity to a **Network Co-Processor (NCP)**, while your application/business logic resides on the **Primary MCU**. This implies a [dual-Microcontroller Unit (MCU)](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present) architecture.
