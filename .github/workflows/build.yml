@@ -21,4 +21,7 @@ jobs:
         run: pip install --upgrade platformio
 
       - name: Build PlatformIO Project
-        run: pio run
+        run: |
+          # uncomment the #define BLYNK_TEMPLATE etc. to not get compile errors
+          sed -i 's\//#define BLYNK_\#define BLYNK_\g' src/main.cpp
+          pio run
