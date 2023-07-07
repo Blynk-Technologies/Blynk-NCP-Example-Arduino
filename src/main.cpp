@@ -46,15 +46,16 @@ void setup() {
 
   Blynk.setConfigTimeout(30*60); // 30 minutes
 
-  // White labeling
+  // White labeling (use this ONLY if you have a branded Blynk App)
   //Blynk.setVendorPrefix("MyCompany");
   //Blynk.setVendorServer("dashboard.mycompany.com");
+
   // Product setup
   Blynk.begin(BLYNK_TEMPLATE_ID, BLYNK_TEMPLATE_NAME);
 
   // Publish some data periodically
   timer.setInterval(1000, []() {
-    Blynk.virtualWrite(V0, millis());
+    Blynk.virtualWrite(V0, millis() / 1000);
   });
 }
 
