@@ -1,14 +1,25 @@
+#include <Arduino.h>
 
+// Create Serial1 for ARDUINO_AVR_UNO and similar boards
+#if defined(__AVR_ATmega328P__)
+  #include <SoftwareSerial.h>
+  SoftwareSerial Serial1(2, 3); // RX, TX
+#endif
+
+// Wait for serial console, up to 3 seconds
 template <typename T>
 void waitSerialConsole(T& ser) {
-#if !defined(LINUX)
-  // Wait for serial console, up to 3 seconds
+#if defined(LINUX)
+  // Not needed on linux
+  (void) ser;
+#else
   const uint32_t tstart = millis();
   while (!ser && (millis() - tstart < 2900)) { delay(1); }
   delay(100);
 #endif
 }
 
+// Entry point for Linux target
 #if defined(LINUX)
 int main(int argc, char* argv[])
 {
