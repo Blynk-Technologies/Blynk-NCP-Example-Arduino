@@ -20,6 +20,7 @@ custom_ncp.firmware     = env.GetProjectOption("custom_ncp.firmware", None)
 custom_ncp.upload_speed = env.GetProjectOption("custom_ncp.upload_speed", "460800")
 custom_ncp.manual_reset = env.GetProjectOption("custom_ncp.manual_reset", False)
 custom_ncp.erase_all    = env.GetProjectOption("custom_ncp.erase_all", True)
+custom_ncp.use_stub     = env.GetProjectOption("custom_ncp.use_stub", True)
 if custom_ncp.manual_reset:
     custom_ncp.before_upload = env.GetProjectOption("custom_ncp.before_upload",  "no_reset")
     custom_ncp.after_upload  = env.GetProjectOption("custom_ncp.after_upload",   "no_reset")
@@ -146,6 +147,7 @@ def upload_ncp(*args, **kwargs):
 
     check_exec(' '.join(["pio", "pkg", "exec",
         "-p", "tool-esptoolpy", "--", "esptool.py",
+          "" if custom_ncp.use_stub else "--no-stub",
           "--baud",   custom_ncp.upload_speed,
           "--before", custom_ncp.before_upload,
           "--after",  custom_ncp.after_upload,
