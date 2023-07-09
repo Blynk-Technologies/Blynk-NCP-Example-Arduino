@@ -17,6 +17,7 @@ pioenv = env["PIOENV"]
 custom_ncp = dotdict({})
 custom_ncp.flasher      = env.GetProjectOption("custom_ncp.flasher", "BlynkNcpFlasher")
 custom_ncp.firmware     = env.GetProjectOption("custom_ncp.firmware", None)
+custom_ncp.firmware_ver = env.GetProjectOption("custom_ncp.firmware_ver", "latest")
 custom_ncp.upload_speed = env.GetProjectOption("custom_ncp.upload_speed", "460800")
 custom_ncp.manual_reset = env.GetProjectOption("custom_ncp.manual_reset", False)
 custom_ncp.erase_all    = env.GetProjectOption("custom_ncp.erase_all", True)
@@ -109,7 +110,11 @@ def get_download_url(filename, release_info):
     raise Exception(f"{filename} not found in Blynk.NCP {tag}")
 
 def fetch_ncp(filename, release = None):
-    release_info = get_release_info(release)
+    try:
+        release_info = get_release_info(release)
+    except:
+        raise Exception(f"Cannot get {release} release info")
+
     tag = release_info["tag_name"]
     ncp_path = f".pio/BlynkNCP/{tag}/"
     ncp_full = ncp_path + filename
@@ -129,7 +134,7 @@ def upload_ncp(*args, **kwargs):
     if custom_ncp.firmware is None:
         raise Exception("custom_ncp.firmware not specified")
 
-    firmware = fetch_ncp(f"BlynkNCP_{custom_ncp.firmware}.flash.bin")
+    firmware = fetch_ncp(f"BlynkNCP_{custom_ncp.firmware}.flash.bin", custom_ncp.firmware_ver)
 
     if custom_ncp.flasher == "BlynkNcpFlasher":
         # Build and upload the flasher utility
