@@ -9,8 +9,8 @@
 // Debug output
 #define BLYNK_PRINT                   Serial
 
-#include <BlynkEdgentNCP.h>
 #include <ArduinoUtils.h>
+#include <BlynkEdgentNCP.h>
 
 BlynkTimer timer;
 
