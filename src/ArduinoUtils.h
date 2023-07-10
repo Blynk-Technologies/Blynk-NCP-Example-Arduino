@@ -3,7 +3,7 @@
 // Create Serial1 for ARDUINO_AVR_UNO and similar boards
 #if defined(__AVR_ATmega328P__)
   #include <SoftwareSerial.h>
-  SoftwareSerial Serial1(2, 3); // RX, TX
+  SoftwareSerial Serial1(BLYNK_NCP_RX, BLYNK_NCP_TX);
 #endif
 
 // Wait for serial console, up to 3 seconds
