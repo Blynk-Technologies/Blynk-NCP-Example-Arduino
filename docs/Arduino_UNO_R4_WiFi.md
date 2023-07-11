@@ -38,7 +38,7 @@ pio run -e unoR4wifi -t upload_ncp
 ## 3. Use the Blynk iOS/Android app to configure your new device
 
 1. Ensure that the Blynk App is installed on your smartphone and scan this QR code:  
-  <img alt="Add New Device QR" src="./docs/Images/AddNewDeviceQR.png" width="250" />
+  <img alt="Add New Device QR" src="Images/AddNewDeviceQR.png" width="250" />
 
   > __Note__: Alternatively, open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 2. Follow the configuration wizard
