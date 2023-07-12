@@ -7,7 +7,7 @@
 1. Disconnect the UNO R4 WiFi from your PC
 2. Short the pins highlighted in the image using a jumper wire:
 
-![ESP32-S3 mode selection jumper](https://github.com/pennam/UnoR4WiFiUpdate/assets/20436476/b271759e-5d7b-44f5-954e-15bc0f7feae9)
+![ESP32-S3 mode selection jumper](./Images/Uno-R4-Jumper.png)
 
 3. Connect the UNO R4 WiFi to your PC
 4. Upload ESP32 firmware:
