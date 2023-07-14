@@ -18,8 +18,8 @@ pio run -e unoR4wifi -t upload_ncp
 
 ## 2. Upload the main MCU (Renesas) firmware
 
-1. Disconnect the UNO R4 WiFi from your PC  
-2. **Unplug the jumper wire**  
+1. Disconnect the UNO R4 WiFi from your PC
+2. **Unplug the jumper wire**
 3. Connect the board again
 4. Edit `src/main.cpp` to include your Blynk Template info, then run:
   ```sh
