@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import requests
 import fnmatch
@@ -28,25 +29,19 @@ if custom_ncp.manual_reset:
 else:
     custom_ncp.before_upload = env.GetProjectOption("custom_ncp.before_upload",  "default_reset")
     custom_ncp.after_upload  = env.GetProjectOption("custom_ncp.after_upload",   "hard_reset")
-
-hint_bootloader = """
-
-Switch your ESP8266 into Firware update mode:
-  1. Press and hold the Boot button (on some boards it can be marked as Flash or IO0)
-  2. Press Reset(RST/EN) button shortly
-  3. Release the Boot button
-
-Press [Enter] when ready.
-"""
-
-hint_reset = """
-Upload complete. Please power-cycle your device (remove the power completely).
-
-Press [Enter] when ready.
-"""
+custom_ncp.pre_upload_message = env.GetProjectOption("custom_ncp.pre_upload_message", None)
+custom_ncp.post_upload_message = env.GetProjectOption("custom_ncp.post_upload_message", None)
 
 hint_no_flasher = """
-Make sure that flasher utility is uploaded to the board.
+Please follow the official firmware flashing guide. This is usually provided by the module vendor.
+Blynk.NCP is shipped as a combined firmware, so you only need to flash a single file (flash at address 0).
+
+Select the firmware file, corresponding to your module type:
+https://docs.blynk.io/en/getting-started/supported-boards#connectivity-modules-supported-by-blynk.ncp
+"""
+
+press_enter_msg = """
+
 Press [Enter] when ready.
 """
 
@@ -131,24 +126,25 @@ def fetch_ncp(filename, release = None):
 
 def upload_ncp(*args, **kwargs):
 
-    if custom_ncp.firmware is None:
-        raise Exception("custom_ncp.firmware not specified")
-
-    firmware = fetch_ncp(f"BlynkNCP_{custom_ncp.firmware}.flash.bin", custom_ncp.firmware_ver)
-
     if custom_ncp.flasher == "BlynkNcpFlasher":
         # Build and upload the flasher utility
         check_exec(f"pio run -d tools/BlynkNcpFlasher -e {pioenv} --target upload")
     elif custom_ncp.flasher == "none":
-        input(hint_no_flasher)
+        print(hint_no_flasher)
+        sys.exit(1)
     elif custom_ncp.flasher == "direct":
         pass
     else:
         raise Exception("custom_ncp.flasher is invalid")
 
+    if custom_ncp.firmware is None:
+        raise Exception("custom_ncp.firmware not specified")
+
+    firmware = fetch_ncp(f"BlynkNCP_{custom_ncp.firmware}.flash.bin", custom_ncp.firmware_ver)
+
     time.sleep(3)
-    if custom_ncp.manual_reset:
-        input(hint_bootloader)
+    if custom_ncp.pre_upload_message:
+        input(custom_ncp.pre_upload_message + press_enter_msg)
 
     check_exec(' '.join(["pio", "pkg", "exec",
         "-p", "tool-esptoolpy", "--", "esptool.py",
@@ -164,8 +160,8 @@ def upload_ncp(*args, **kwargs):
         "0x0", firmware
     ]))
 
-    if custom_ncp.manual_reset:
-        input(hint_reset)
+    if custom_ncp.post_upload_message:
+        input(custom_ncp.post_upload_message + press_enter_msg)
 
 env.AddCustomTarget(
     name="upload_ncp",
