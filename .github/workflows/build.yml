@@ -2,9 +2,9 @@ name: PlatformIO CI
 
 on:
   push:
-    paths-ignore: ['**.md', '**.svg', '**.png']
+    paths-ignore: ['**.md', '**.svg', '**.png', '**.fzz']
   pull_request:
-    paths-ignore: ['**.md', '**.svg', '**.png']
+    paths-ignore: ['**.md', '**.svg', '**.png', '**.fzz']
 
 jobs:
   build:
