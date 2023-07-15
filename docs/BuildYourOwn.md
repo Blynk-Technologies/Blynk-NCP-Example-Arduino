@@ -32,7 +32,7 @@ After printing this bootlog identification, the device waits for the `BlynkNcpDr
 Connect Blynk.NCP to the Primary MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040`, `ATSAMD`, `K210`, ...) using UART.  
 For example, here's how to connect the XBee form factor modules (`Macchina SuperB`, `DFRobot WiFi Bee`) to the `Raspberry Pi Pico` board:
 
-![Blynk.NCP breadboard](./Images/PiPico-XBee-BlynkNCP.png)
+<img alt="Blynk.NCP breadboard" src="./Images/PiPico-XBee-BlynkNCP.png" width="50%" />
 
 ## 3. Use the Blynk library to communicate with the NCP
 
