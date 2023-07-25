@@ -67,9 +67,9 @@ You can also [add one of the supported connectivity modules](docs/BuildYourOwn.m
 
 This project uses **PlatformIO**. We recommend using [**VSCode**][pio_vscode] or [**PIO CLI**][pio_cli].
 
-Clone this repository using `git`, or download it as a [`ZIP` file](https://github.com/blynkkk/BlynkNcpExample/archive/refs/heads/main.zip).
+1. Clone this repository using `git`, or download it as a [`ZIP` file](https://github.com/blynkkk/BlynkNcpExample/archive/refs/heads/main.zip).
 
-Flash the Blynk.NCP firmware (***replace `rp2040connect` with your board type***):
+2. Flash the Blynk.NCP firmware (***replace `rp2040connect` with your board type***):
 
 ```sh
 pio run -e rp2040connect -t upload_ncp
@@ -78,14 +78,14 @@ pio run -e rp2040connect -t upload_ncp
 > __Warning__: This overwrites both the Main MCU and the connectivity module firmware.  
 > You can [restore the stock firmware][restore] easily.
 
-Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
+3. Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
 
 ```cpp
 #define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
 #define BLYNK_TEMPLATE_NAME         "MyDevice"
 ```
 
-Build and flash the example project, run the serial monitor:
+4. Build and flash the example project, run the serial monitor:
 
 ```sh
 pio run -e rp2040connect -t upload
