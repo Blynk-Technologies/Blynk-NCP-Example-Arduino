@@ -11,8 +11,12 @@
 
 #include <ArduinoUtils.h>
 #include <BlynkEdgentNCP.h>
+#include <OneButton.h>
 
 BlynkTimer timer;
+
+// Attach a momentary push button to pin 6 (active LOW)
+OneButton button(6, true);
 
 BLYNK_CONNECTED() {
   BLYNK_LOG("Connected to Blynk 🙌");
@@ -47,6 +51,25 @@ void setup() {
   // Set config mode timeout to 30 minutes, for testing purposes
   Blynk.setConfigTimeout(30*60);
 
+  // Set up the user button
+  button.setLongPressIntervalMs(1000);
+  button.attachLongPressStart([]() {
+    BLYNK_LOG("Hold button for 10s to reset config");
+  });
+  button.attachDuringLongPress([]() {
+    const uint32_t t = button.getPressedMs();
+    if (t > 10000 && t < 15000) {
+      BLYNK_LOG("Release button to reset config");
+    }
+  });
+  button.attachLongPressStop([]() {
+    const uint32_t t = button.getPressedMs();
+    if (t > 10000 && t < 15000) {
+      Blynk.resetConfig();
+      BLYNK_LOG("Blynk.NCP configuration is erased");
+    }
+  });
+
   // White labeling (use this ONLY if you have a branded Blynk App)
   //Blynk.setVendorPrefix("MyCompany");
   //Blynk.setVendorServer("dashboard.mycompany.com");
@@ -63,5 +86,6 @@ void setup() {
 void loop() {
   timer.run();
   Blynk.run();
+  button.tick();
   delay(1);
 }

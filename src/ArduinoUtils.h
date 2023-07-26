@@ -1,3 +1,5 @@
+#pragma once
+
 #include <Arduino.h>
 
 // Create Serial1 for ARDUINO_AVR_UNO and similar boards
