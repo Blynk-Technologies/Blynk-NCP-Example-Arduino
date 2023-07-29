@@ -90,7 +90,9 @@
 
   static
   void displayColor(uint32_t color) {
-    Serial.printf("Color: %06x\n", color);
+    char buff[32];
+    sprintf(buff, "Color: %06x\n", color);
+    Serial.println(buff);
   }
 
 #endif
