@@ -21,6 +21,57 @@ void waitSerialConsole(T& ser) {
 #endif
 }
 
+static inline
+uint32_t rainbow(int val, int val_min, int val_max)
+{
+  const int hue = map(val, val_min, val_max, 0, 1535);
+  int red, green, blue;
+
+  if (hue < 256) {
+    red = 255;
+    blue = hue;
+    green = 0;
+  }
+  else if (hue < 512) {
+    red = 511 - hue;
+    blue = 255;
+    green = 0;
+  }
+  else if (hue < 768) {
+    red = 0;
+    blue = 255;
+    green = hue - 512;
+  }
+  else if (hue < 1024) {
+    red = 0;
+    blue = 1023 - hue;
+    green = 255;
+  }
+  else if (hue < 1280) {
+    red = hue - 1024;
+    blue = 0;
+    green = 255;
+  }
+  else {
+    red = 255;
+    blue = 0;
+    green = 1535 - hue;
+  }
+  return (red << 16) | (green << 8) | blue;
+}
+
+static
+String RGBtoHEX(uint32_t rgb32) {
+  char buff[32];
+  sprintf(buff, "#%02x%02x%02x", (rgb32>>16)&0xFF, (rgb32>>8)&0xFF, rgb32&0xFF);
+  return buff;
+}
+
+static
+uint16_t RGBtoRGB16(uint32_t rgb32) {
+  return (rgb32>>8&0xf800) | (rgb32>>5&0x07e0) | (rgb32>>3&0x001f);
+}
+
 // Entry point for Linux target
 #if defined(LINUX)
 int main(int argc, char* argv[])

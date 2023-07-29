@@ -9,14 +9,12 @@
 // Debug output
 #define BLYNK_PRINT                   Serial
 
-#include <ArduinoUtils.h>
-#include <BlynkEdgentNCP.h>
 #include <OneButton.h>
+#include <ArduinoUtils.h>
+#include <BoardSetup.h>
+#include <BlynkEdgentNCP.h>
 
 BlynkTimer timer;
-
-// Attach a momentary push button to pin 6 (active LOW)
-OneButton button(6, true);
 
 BLYNK_CONNECTED() {
   BLYNK_LOG("Connected to Blynk 🙌");
@@ -26,9 +24,18 @@ BLYNK_DISCONNECTED() {
   BLYNK_LOG("Blynk disconnected");
 }
 
+BLYNK_WRITE(V1) {
+  uint32_t color = rainbow(param.asInt(), 0, 64);
+  Blynk.setProperty(V0, "color", RGBtoHEX(color));
+  displayColor(color);
+}
+
 void setup() {
   Serial.begin(115200);
   Serial.println();
+
+  BoardSetup();
+
   waitSerialConsole(Serial);
 
   BLYNK_LOG("Main firmware: %s", BLYNK_FIRMWARE_VERSION);
@@ -45,7 +52,7 @@ void setup() {
 
   // Print state changes
   Blynk.onStateChange([]() {
-    BLYNK_LOG("State: %s", Blynk.getStateString());
+    displayMessage(Blynk.getStateString());
   });
 
   // Set config mode timeout to 30 minutes, for testing purposes
@@ -53,21 +60,35 @@ void setup() {
 
   // Set up the user button
   button.setLongPressIntervalMs(1000);
+
+  button.attachClick([]() {
+    displayMessage("Click!");
+    timer.setTimeout(1000, displayClear);
+  });
+  button.attachDoubleClick([]() {
+    displayMessage("Double Click!");
+    timer.setTimeout(1000, displayClear);
+  });
+
   button.attachLongPressStart([]() {
-    BLYNK_LOG("Hold button for 10s to reset config");
+    displayMessage("Hold button to reset config");
   });
   button.attachDuringLongPress([]() {
     const uint32_t t = button.getPressedMs();
     if (t > 10000 && t < 15000) {
-      BLYNK_LOG("Release button to reset config");
+      displayMessage("Release button");
+    } else if (t > 15000) {
+      displayClear();
     }
   });
   button.attachLongPressStop([]() {
     const uint32_t t = button.getPressedMs();
     if (t > 10000 && t < 15000) {
-      Blynk.resetConfig();
-      BLYNK_LOG("Blynk.NCP configuration is erased");
+      if (Blynk.resetConfig()) {
+        BLYNK_LOG("Blynk.NCP configuration is erased");
+      }
     }
+    displayClear();
   });
 
   // White labeling (use this ONLY if you have a branded Blynk App)
