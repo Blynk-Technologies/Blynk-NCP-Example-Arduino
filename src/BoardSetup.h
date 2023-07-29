@@ -91,7 +91,8 @@
   static
   void displayColor(uint32_t color) {
     char buff[32];
-    sprintf(buff, "Color: %06x\n", color);
+    snprintf(buff, sizeof(buff),
+             "Color: %06" PRIx32, color);
     Serial.println(buff);
   }
 

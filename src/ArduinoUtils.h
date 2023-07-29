@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Arduino.h>
+#include <stdio.h>
 
 // Create Serial1 for ARDUINO_AVR_UNO and similar boards
 #if defined(__AVR_ATmega328P__)
@@ -25,7 +26,7 @@ static inline
 uint32_t rainbow(int val, int val_min, int val_max)
 {
   const int hue = map(val, val_min, val_max, 0, 1535);
-  int red, green, blue;
+  long red, green, blue;
 
   if (hue < 256) {
     red = 255;
@@ -60,14 +61,16 @@ uint32_t rainbow(int val, int val_min, int val_max)
   return (red << 16) | (green << 8) | blue;
 }
 
-static
+static inline
 String RGBtoHEX(uint32_t rgb32) {
   char buff[32];
-  sprintf(buff, "#%02x%02x%02x", (rgb32>>16)&0xFF, (rgb32>>8)&0xFF, rgb32&0xFF);
+  snprintf(buff, sizeof(buff),
+           "#%02" PRIx32 "%02" PRIx32 "%02" PRIx32,
+           (rgb32>>16)&0xFF, (rgb32>>8)&0xFF, rgb32&0xFF);
   return buff;
 }
 
-static
+static inline
 uint16_t RGBtoRGB16(uint32_t rgb32) {
   return (rgb32>>8&0xf800) | (rgb32>>5&0x07e0) | (rgb32>>3&0x001f);
 }
