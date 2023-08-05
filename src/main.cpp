@@ -9,8 +9,8 @@
 // Debug output
 #define BLYNK_PRINT                   Serial
 
-#include <OneButton.h>
 #include <ArduinoUtils.h>
+#include <OneButton.h>
 #include <BoardSetup.h>
 #include <BlynkEdgentNCP.h>
 
@@ -41,12 +41,13 @@ void setup() {
   BLYNK_LOG("Main firmware: %s", BLYNK_FIRMWARE_VERSION);
   BLYNK_LOG("Build: %s", __DATE__ " " __TIME__);
 
-  // Initialize the Blynk.NCP hardware
+  displayMessage("Initializing Blynk.NCP");
+
   if (Blynk.initNCP()) {
     String ver = Blynk.getNcpVersion();
     BLYNK_LOG("Blynk.NCP firmware: %s", ver.c_str());
   } else {
-    BLYNK_LOG("Cannot communicate to Blynk.NCP");
+    displayMessage("Cannot communicate to Blynk.NCP");
     return;
   }
 

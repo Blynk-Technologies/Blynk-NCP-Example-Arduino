@@ -4,9 +4,6 @@
 
   #include <TFT_eSPI.h>
 
-  #include "hardware/gpio.h"
-  #include "hardware/adc.h"
-
   #include "BlynkLogoBlack96.h"
   #include "NotoSansBold15.h"
 
@@ -20,14 +17,6 @@
     pinMode(PIN_PWR_ON, OUTPUT);
     digitalWrite(PIN_PWR_ON, HIGH);
 
-    /* Configure battery voltage detection pin */
-    adc_init();
-    adc_gpio_init(PIN_BAT_VOLT);
-    adc_select_input(0);
-
-    pinMode(PIN_TFT_BL, OUTPUT);
-    digitalWrite(PIN_TFT_BL, 0);
-
     tft.begin();
     tft.initDMA();
     tft.setSwapBytes(true);
@@ -39,6 +28,7 @@
                   BlynkLogoBlack96);
 
     /* Gradually lighten up */
+    pinMode(PIN_TFT_BL, OUTPUT);
     for (int i = 0; i <= 120; i += 5) {
       analogWrite(PIN_TFT_BL, i);
       delay(20);
@@ -57,6 +47,7 @@
 
   static
   void displayMessage(const String& text) {
+    Serial.println(text);
     tft.fillScreen(TFT_BLACK);
     tft.setTextColor(TFT_GREENYELLOW, TFT_BLACK);
     tft.setTextDatum(MC_DATUM);
@@ -69,6 +60,64 @@
                             RGBtoRGB16(color), TFT_BLACK);
   }
 
+#elif defined(SEEED_WIO_TERMINAL)
+
+  #include <TFT_eSPI.h>
+  #include "WioTerminalBacklight.h"
+  #include "BlynkLogoBlack96.h"
+  #include "NotoSansBold15.h"
+
+  TFT_eSPI tft;
+  LCDBackLight backLight;
+
+  OneButton button(WIO_KEY_C, true);
+  OneButton button2(WIO_KEY_B, true);
+  OneButton button3(WIO_KEY_A, true);
+
+  static
+  void BoardSetup() {
+    tft.begin();
+    tft.setSwapBytes(true);
+    tft.setRotation(3);
+    tft.fillScreen(TFT_BLACK);
+    tft.pushImage((TFT_HEIGHT-96)/2,
+                  (TFT_WIDTH-96)/2,
+                  96, 96,
+                  BlynkLogoBlack96);
+
+    /* Gradually lighten up */
+    backLight.initialize();
+    for (int i = 0; i <= backLight.getMaxBrightness()/2; i++) {
+      backLight.setBrightness(i);
+      delay(20);
+    }
+
+    delay(1000);
+
+    tft.fillScreen(TFT_BLACK);
+    tft.loadFont(NotoSansBold15);
+    tft.setTextWrap(true, true);
+  }
+
+  static
+  void displayClear() {
+    tft.fillScreen(TFT_BLACK);
+  }
+
+  static
+  void displayMessage(const String& text) {
+    Serial.println(text);
+    tft.fillScreen(TFT_BLACK);
+    tft.setTextColor(TFT_GREENYELLOW, TFT_BLACK);
+    tft.setTextDatum(MC_DATUM);
+    tft.drawString(text, TFT_HEIGHT/2, TFT_WIDTH/2);
+  }
+
+  static
+  void displayColor(uint32_t color) {
+    tft.fillRoundRect(10, 10, TFT_HEIGHT-20, TFT_WIDTH-20,
+                            RGBtoRGB16(color), TFT_BLACK);
+  }
 
 #else
 

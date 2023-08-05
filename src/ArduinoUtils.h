@@ -1,5 +1,10 @@
 #pragma once
 
+#if !defined(__AVR__)
+  // define std::min, std::max before Arduino
+  #include <algorithm>
+#endif
+
 #include <Arduino.h>
 #include <stdio.h>
 
@@ -16,8 +21,7 @@ void waitSerialConsole(T& ser) {
   // Not needed on linux
   (void) ser;
 #else
-  const uint32_t tstart = millis();
-  while (!ser && (millis() - tstart < 2900)) { delay(1); }
+  while (!ser && (millis() < 3000)) { delay(10); }
   delay(100);
 #endif
 }
