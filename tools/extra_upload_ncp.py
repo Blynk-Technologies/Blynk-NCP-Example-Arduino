@@ -16,7 +16,7 @@ class dotdict(dict):
 pioenv = env["PIOENV"]
 
 custom_ncp = dotdict({})
-custom_ncp.flasher      = env.GetProjectOption("custom_ncp.flasher", "BlynkNcpFlasher")
+custom_ncp.flasher      = env.GetProjectOption("custom_ncp.flasher", "BlynkNcpFlasher, esptool")
 custom_ncp.firmware     = env.GetProjectOption("custom_ncp.firmware", None)
 custom_ncp.firmware_ver = env.GetProjectOption("custom_ncp.firmware_ver", "latest")
 custom_ncp.upload_speed = env.GetProjectOption("custom_ncp.upload_speed", "460800")
@@ -126,42 +126,59 @@ def fetch_ncp(filename, release = None):
 
 def upload_ncp(*args, **kwargs):
 
-    if custom_ncp.flasher == "BlynkNcpFlasher":
-        # Build and upload the flasher utility
-        check_exec(f"pio run -d tools/BlynkNcpFlasher -e {pioenv} --target upload")
-    elif custom_ncp.flasher == "none":
+    flashers = custom_ncp.flasher.split(",")
+    flashers = list(filter(None, flashers))     # remove empty
+    flashers = list(map(str.strip, flashers))   # strip all items
+
+    if not len(flashers):
         print(hint_no_flasher)
         sys.exit(1)
-    elif custom_ncp.flasher == "direct":
-        pass
-    else:
-        raise Exception("custom_ncp.flasher is invalid")
 
     if custom_ncp.firmware is None:
-        raise Exception("custom_ncp.firmware not specified")
+        print("custom_ncp.firmware not specified")
+        sys.exit(1)
 
-    firmware = fetch_ncp(f"BlynkNCP_{custom_ncp.firmware}.flash.bin", custom_ncp.firmware_ver)
+    firmware = fetch_ncp(f"BlynkNCP_{custom_ncp.firmware}", custom_ncp.firmware_ver)
 
-    time.sleep(3)
-    if custom_ncp.pre_upload_message:
-        input(custom_ncp.pre_upload_message + press_enter_msg)
+    for flasher in flashers:
+        if flasher == "BlynkNcpFlasher":
+            # Build and upload the flasher utility
+            check_exec(f"pio run -d tools/BlynkNcpFlasher -e {pioenv} --target upload")
+        elif flasher == "esptool":
+            time.sleep(3)
+            if custom_ncp.pre_upload_message:
+                input(custom_ncp.pre_upload_message + press_enter_msg)
 
-    check_exec(' '.join(["pio", "pkg", "exec",
-        "-p", "tool-esptoolpy", "--", "esptool.py",
-          "" if custom_ncp.use_stub else "--no-stub",
-          "--baud",   custom_ncp.upload_speed,
-          "--before", custom_ncp.before_upload,
-          "--after",  custom_ncp.after_upload,
-        "write_flash",
-          #"--flash_mode", "dio", TODO: flash_mode
-          #"--flash_freq", "40m", TODO: f_flash
-          "--flash_size", "detect",
-          "--erase-all" if custom_ncp.erase_all else "",
-        "0x0", firmware
-    ]))
+            check_exec(' '.join(["pio", "pkg", "exec",
+                "-p", "tool-esptoolpy", "--", "esptool.py",
+                "" if custom_ncp.use_stub else "--no-stub",
+                "--baud",   custom_ncp.upload_speed,
+                "--before", custom_ncp.before_upload,
+                "--after",  custom_ncp.after_upload,
+                "write_flash",
+                #"--flash_mode", "dio", TODO: flash_mode
+                #"--flash_freq", "40m", TODO: f_flash
+                "--flash_size", "detect",
+                "--erase-all" if custom_ncp.erase_all else "",
+                "0x0", firmware
+            ]))
 
-    if custom_ncp.post_upload_message:
-        input(custom_ncp.post_upload_message + press_enter_msg)
+            if custom_ncp.post_upload_message:
+                input(custom_ncp.post_upload_message + press_enter_msg)
+        elif flasher == "flash_wio_terminal":
+            time.sleep(3)
+            if custom_ncp.pre_upload_message:
+                input(custom_ncp.pre_upload_message + press_enter_msg)
+
+            check_exec(' '.join(["python3",
+                "tools/flash_wio_terminal.py",
+                firmware
+            ]))
+
+            if custom_ncp.post_upload_message:
+                input(custom_ncp.post_upload_message + press_enter_msg)
+        else:
+            raise Exception(f"Flasher {flasher} is invalid")
 
 env.AddCustomTarget(
     name="upload_ncp",
