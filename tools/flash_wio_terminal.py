@@ -1,13 +1,14 @@
 import os
 import sys
-import shutil
 import requests
 import contextlib
 import platform
+import struct
 from pathlib import Path
 from zipfile import ZipFile, ZipInfo
 
 _local_path = os.path.realpath(os.path.dirname(__file__))
+_ambd_flash_tool = Path(_local_path, "ambd_flash_tool")
 
 class ZipFileWithPermissions(ZipFile):
     """ Custom ZipFile class handling file permissions. """
@@ -88,8 +89,6 @@ def downloadFile(url, filename):
             for chunk in r.iter_content(chunk_size=8192):
                 f.write(chunk)
 
-_ambd_flash_tool = Path(_local_path, "ambd_flash_tool")
-
 def getFlashTool():
     if not _ambd_flash_tool.exists():
         zipfn = str(_ambd_flash_tool) + ".zip"
@@ -97,26 +96,52 @@ def getFlashTool():
         with ZipFileWithPermissions(zipfn) as zf:
             zf.extractall(_local_path)
         Path(_local_path, "ambd_flash_tool-master").rename(_ambd_flash_tool)
-    _tool = Path(_ambd_flash_tool, 'tool')
+        Path(zipfn).unlink()
+
+    tool = Path(_ambd_flash_tool, 'tool')
     _platform = platform.platform()
     if 'Windows' in _platform:
-        _tool = str(Path(_tool, 'windows', "amebad_image_tool.exe"))
+        tool = str(Path(tool, 'windows', "amebad_image_tool.exe"))
     elif 'Linux' in _platform:
-        _tool = str(Path(_tool, 'linux', 'amebad_image_tool'))
+        tool = str(Path(tool, 'linux', 'amebad_image_tool'))
     elif _platform.find('Darwin') >= 0 or _platform.find('macOS') >= 0:
-        _tool = str(Path(_tool, 'macos', 'amebad_image_tool'))
+        tool = str(Path(tool, 'macos', 'amebad_image_tool'))
     else:
         raise Exception("Platform not supported")
-    return _tool
+    return tool
 
-_port, _isbootloader = getAvailableBoard()
-_tool = getFlashTool()
+def makeEmptyImage(length):
+    empty = struct.pack('B', 0xFF) * 1024
+    with open(Path(_ambd_flash_tool, "km0_boot_all.bin"), "wb") as f:
+        for i in range(8):
+            f.write(empty)
 
-firmware = sys.argv[1]
+    with open(Path(_ambd_flash_tool, "km4_boot_all.bin"), "wb") as f:
+        for i in range(4):
+            f.write(empty)
 
-with ZipFile(firmware) as zf:
-    zf.extractall(_ambd_flash_tool)
+    with open(Path(_ambd_flash_tool, "km0_km4_image2.bin"), "wb") as f:
+        for i in range(length - 12):
+            f.write(empty)
 
-with pushd(_ambd_flash_tool):
-    os.system(f"{_tool} {_port}")
+def extractFirmware(filename):
+    with ZipFile(filename) as zf:
+        zf.extractall(_ambd_flash_tool)
+
+if __name__ == '__main__':
+    firmware = os.path.realpath(sys.argv[1])
+
+    tool = getFlashTool()
+    port, isbootloader = getAvailableBoard()
+    if port == None:
+        print("The device is not plugged in")
+        sys.exit(1)
+
+    with pushd(_ambd_flash_tool):
+        print("Erasing, please wait...")
+        makeEmptyImage(2048)
+        os.system(f"{tool} {port}")
+        print("Flashing, please wait...")
+        extractFirmware(firmware)
+        os.system(f"{tool} {port}")
 
