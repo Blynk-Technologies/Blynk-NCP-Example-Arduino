@@ -33,8 +33,11 @@ jobs:
             make -j4
             sudo make install
             cd ..
-      - name: Build PlatformIO Project
+      - name: Build Example Project
         run: |
           # uncomment the #define BLYNK_TEMPLATE etc. to not get compile errors
           sed -i 's\//#define BLYNK_\#define BLYNK_\g' src/main.cpp
           pio run
+      - name: Build BlynkNcpFlasher
+        run: |
+          pio run --project-dir tools/BlynkNcpFlasher
