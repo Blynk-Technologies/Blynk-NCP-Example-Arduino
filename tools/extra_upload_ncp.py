@@ -105,6 +105,11 @@ def get_download_url(filename, release_info):
     raise Exception(f"{filename} not found in Blynk.NCP {tag}")
 
 def fetch_ncp(filename, release = None):
+    ncp_path = f".pio/BlynkNCP/{release}/"
+    ncp_full = ncp_path + filename
+    if os.path.exists(ncp_full):
+        return ncp_full
+
     try:
         release_info = get_release_info(release)
     except:

@@ -12,6 +12,5 @@
     unsigned len = min(SerialNCP.available(), sizeof(buffer));
     SerialNCP.readBytes(buffer, len);
     SerialPC.write(buffer, len);
-    ledToggle();
   }
 

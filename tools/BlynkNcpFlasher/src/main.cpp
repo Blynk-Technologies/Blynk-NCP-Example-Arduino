@@ -150,12 +150,11 @@ void ledToggle();
 #elif defined(SEEED_WIO_TERMINAL)
 
     #include "TFT_eSPI.h"
+    TFT_eSPI tft;
 
     #define SerialNCP RTL8720D
 
     unsigned long baud = 115200;
-
-    TFT_eSPI tft;
 
     void ncpInit() {
       tft.begin();
@@ -167,7 +166,6 @@ void ledToggle();
       tft.setTextDatum(BC_DATUM);
       tft.drawString("Flashing RTL8720...", TFT_HEIGHT/2, TFT_WIDTH/2);
 
-      // initialize both serial ports:
       pinMode(PIN_SERIAL2_RX, OUTPUT);
       pinMode(RTL8720D_CHIP_PU, OUTPUT);
       digitalWrite(PIN_SERIAL2_RX, LOW);
@@ -177,14 +175,20 @@ void ledToggle();
       delay(500);
       pinMode(PIN_SERIAL2_RX, INPUT);
 
-      //Serial.beginWithoutDTR(baud);
-
       SerialNCP.begin(baud);
-
-      //delay(500);
     }
 
-    #include "loop_baud_check.h"
+    void ncpReboot() {
+      tft.fillScreen(TFT_BLACK);
+      tft.drawString("RTL8720 updated", TFT_HEIGHT/2, TFT_WIDTH/2);
+
+      digitalWrite(LED_BUILTIN, LOW);
+      digitalWrite(RTL8720D_CHIP_PU, LOW);
+      delay(100);
+      digitalWrite(RTL8720D_CHIP_PU, HIGH);
+    }
+
+    #include "loop_wio_terminal.h"
 
 #else
     #error "Platform not supported"

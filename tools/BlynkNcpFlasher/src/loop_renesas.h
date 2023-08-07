@@ -32,7 +32,6 @@ void loop() {
     buffer[len++] = SerialNCP.read();
   }
   if (len) {
-    ledToggle();
     SerialPC.write(buffer, len);
   }
 

@@ -82,6 +82,17 @@ def getAvailableBoard():
                         return port, False
     return None, False
 
+def stty(port, baud):
+    if os.name == "posix":
+        if platform.uname().system == "Darwin":
+            return os.system(f"stty -f {port} {baud}")
+        else:
+            return os.system(f"stty -F {port} {baud}")
+    elif os.name == "nt":
+        return os.system(f"MODE {port}:BAUD={baud} PARITY=N DATA=8")
+
+    raise Exception("stty not supported")
+
 def downloadFile(url, filename):
     with requests.get(url, stream=True) as r:
         r.raise_for_status()
@@ -144,4 +155,7 @@ if __name__ == '__main__':
         print("Flashing, please wait...")
         extractFirmware(firmware)
         os.system(f"{tool} {port}")
+
+    print("Done. Rebooting NCP")
+    stty(port, 2400)
 
