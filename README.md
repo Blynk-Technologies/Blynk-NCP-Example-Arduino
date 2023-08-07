@@ -2,6 +2,7 @@
 # Blynk.NCP
 
 [![Issues](https://img.shields.io/github/issues/blynkkk/BlynkNcpExample.svg)](https://github.com/blynkkk/BlynkNcpExample/issues)
+[![downloads](https://img.shields.io/github/downloads/blynkkk/BlynkNcpDriver/total)](https://github.com/blynkkk/BlynkNcpDriver/releases/latest)
 [![PlatformIO CI](https://img.shields.io/github/actions/workflow/status/blynkkk/BlynkNcpExample/build.yml)](https://github.com/blynkkk/BlynkNcpExample/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/blynkkk/BlynkNcpExample?color=blue)](LICENSE)
 
@@ -56,6 +57,7 @@ Board                            |                 | 🔄 MCU / NCP   | 🌐    
 [MKR WiFi 1010][5]               | `mkrwifi1010`   | `✅ / ❌`      | WiFi 2.4     | BLE     | 384 KB
 [T-PicoC3][6]                    | `t_pico_c3`     | `✅ / ✅`      | WiFi 2.4     | BLE     | 512 KB
 [RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `✅ / ✅`      | WiFi 2.4     | WiFiAP  | 1000 KB
+[Wio Terminal][9]                | *soon*          | `✅ / ❌`      | WiFi 2.4/5   | BLE     | -
 
 🔄 Over-the-Air Updates, 🌐 Connectivity, ⚙️ Provisioning, 🗃️ File System
 
@@ -69,10 +71,10 @@ This project uses **PlatformIO**. We recommend using [**VSCode**][pio_vscode] or
 
 1. Clone this repository using `git`, or download it as a [`ZIP` file](https://github.com/blynkkk/BlynkNcpExample/archive/refs/heads/main.zip).
 
-2. Flash the Blynk.NCP firmware (***replace `rp2040connect` with your board type***):
+2. Flash the Blynk.NCP firmware (***replace `nano33iot` with your board type***):
 
 ```sh
-pio run -e rp2040connect -t upload_ncp
+pio run -e nano33iot -t upload_ncp
 ```
 
 > __Warning__: This overwrites both the Main MCU and the connectivity module firmware.  
@@ -88,7 +90,7 @@ pio run -e rp2040connect -t upload_ncp
 4. Build and flash the example project, run the serial monitor:
 
 ```sh
-pio run -e rp2040connect -t upload
+pio run -e nano33iot -t upload
 pio device monitor
 ```
 
@@ -120,3 +122,5 @@ Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find De
 [6]: https://www.lilygo.cc/products/lilygo%C2%AE-t-picoc3-esp32-c3-rp2040-1-14-inch-lcd-st7789v
 [7]: https://www.raspberrypi.com/products/raspberry-pi-pico
 [8]: https://www.waveshare.com/pico-esp8266.htm
+[9]: https://www.seeedstudio.com/Wio-Terminal-p-4509.html
+
