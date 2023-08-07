@@ -57,7 +57,7 @@ Board                            |                 | 🔄 MCU / NCP   | 🌐    
 [MKR WiFi 1010][5]               | `mkrwifi1010`   | `✅ / ❌`      | WiFi 2.4     | BLE     | 384 KB
 [T-PicoC3][6]                    | `t_pico_c3`     | `✅ / ✅`      | WiFi 2.4     | BLE     | 512 KB
 [RPi Pico][7] + [ESP8266][8]     | `pico_esp8266`  | `✅ / ✅`      | WiFi 2.4     | WiFiAP  | 1000 KB
-[Wio Terminal][9]                | *soon*          | `✅ / ❌`      | WiFi 2.4/5   | BLE     | -
+[Wio Terminal][9]                | `⏳`            | `✅ / ❔`      | WiFi 2.4/5   | BLE     | ❔
 
 🔄 Over-the-Air Updates, 🌐 Connectivity, ⚙️ Provisioning, 🗃️ File System
 
