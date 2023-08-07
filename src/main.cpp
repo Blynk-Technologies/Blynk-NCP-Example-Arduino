@@ -18,6 +18,7 @@ BlynkTimer timer;
 
 BLYNK_CONNECTED() {
   BLYNK_LOG("Connected to Blynk 🙌");
+  Blynk.syncVirtual(V1);
 }
 
 BLYNK_DISCONNECTED() {
@@ -30,36 +31,7 @@ BLYNK_WRITE(V1) {
   displayColor(color);
 }
 
-void setup() {
-  Serial.begin(115200);
-  Serial.println();
-
-  BoardSetup();
-
-  waitSerialConsole(Serial);
-
-  BLYNK_LOG("Main firmware: %s", BLYNK_FIRMWARE_VERSION);
-  BLYNK_LOG("Build: %s", __DATE__ " " __TIME__);
-
-  displayMessage("Initializing Blynk.NCP");
-
-  if (Blynk.initNCP()) {
-    String ver = Blynk.getNcpVersion();
-    BLYNK_LOG("Blynk.NCP firmware: %s", ver.c_str());
-  } else {
-    displayMessage("Cannot communicate to Blynk.NCP");
-    return;
-  }
-
-  // Print state changes
-  Blynk.onStateChange([]() {
-    displayMessage(Blynk.getStateString());
-  });
-
-  // Set config mode timeout to 30 minutes, for testing purposes
-  Blynk.setConfigTimeout(30*60);
-
-  // Set up the user button
+void setupUserButton() {
   button.setLongPressIntervalMs(1000);
 
   button.attachClick([]() {
@@ -91,13 +63,46 @@ void setup() {
     }
     displayClear();
   });
+}
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println();
+
+  setupBoard();
+  setupUserButton();
+  waitSerialConsole(Serial);
+
+  BLYNK_LOG("Main firmware: %s", BLYNK_FIRMWARE_VERSION);
+  BLYNK_LOG("Build: %s", __DATE__ " " __TIME__);
+
+  displayMessage("Initializing Blynk.NCP");
+
+  if (Blynk.initNCP()) {
+    String ver = Blynk.getNcpVersion();
+    BLYNK_LOG("Blynk.NCP firmware: %s", ver.c_str());
+  } else {
+    displayMessage("Cannot communicate to Blynk.NCP");
+    return;
+  }
+
+  // Print state changes
+  Blynk.onStateChange([]() {
+    displayMessage(Blynk.getStateString());
+  });
+
+  // Set config mode timeout to 30 minutes, for testing purposes
+  Blynk.setConfigTimeout(30*60);
 
   // White labeling (use this ONLY if you have a branded Blynk App)
   //Blynk.setVendorPrefix("MyCompany");
   //Blynk.setVendorServer("dashboard.mycompany.com");
 
   // Product setup
-  Blynk.begin(BLYNK_TEMPLATE_ID, BLYNK_TEMPLATE_NAME);
+  if (!Blynk.begin(BLYNK_TEMPLATE_ID, BLYNK_TEMPLATE_NAME)) {
+    displayMessage("Error. Invalid Template ID?");
+    return;
+  }
 
   // Publish some data periodically
   timer.setInterval(1000, []() {

@@ -12,7 +12,7 @@
   OneButton button2(PIN_BUTTON2, true);
 
   static
-  void BoardSetup() {
+  void setupBoard() {
     /* Open the power supply */
     pinMode(PIN_PWR_ON, OUTPUT);
     digitalWrite(PIN_PWR_ON, HIGH);
@@ -56,6 +56,7 @@
 
   static
   void displayColor(uint32_t color) {
+    Serial.printf("Color: %06" PRIx32 "\n", color);
     tft.fillSmoothRoundRect(10, 10, TFT_HEIGHT-20, TFT_WIDTH-20, 7,
                             RGBtoRGB16(color), TFT_BLACK);
   }
@@ -75,7 +76,10 @@
   OneButton button3(WIO_KEY_A, true);
 
   static
-  void BoardSetup() {
+  void setupBoard() {
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, LOW);
+
     tft.begin();
     tft.setSwapBytes(true);
     tft.setRotation(3);
@@ -115,7 +119,8 @@
 
   static
   void displayColor(uint32_t color) {
-    tft.fillRoundRect(10, 10, TFT_HEIGHT-20, TFT_WIDTH-20,
+    Serial.printf("Color: %06" PRIx32 "\n", color);
+    tft.fillSmoothRoundRect(20, 20, TFT_HEIGHT-40, TFT_WIDTH-40, 7,
                             RGBtoRGB16(color), TFT_BLACK);
   }
 
@@ -125,7 +130,7 @@
   OneButton button(6, true);
 
   static
-  void BoardSetup() {
+  void setupBoard() {
   }
 
   static
