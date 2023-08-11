@@ -67,7 +67,8 @@ You can also [add one of the supported connectivity modules](docs/BuildYourOwn.m
 
 ## Getting started
 
-This project uses **PlatformIO**. We recommend using [**VSCode**][pio_vscode] or [**PIO CLI**][pio_cli].
+This project uses **PlatformIO**. We recommend using [**VSCode**][pio_vscode] or [**PIO CLI**][pio_cli].  
+See the [**troubleshooting**](#troubleshooting) section if you have issues with the following steps.
 
 1. Clone this repository using `git`, or download it as a [`ZIP` file](https://github.com/blynkkk/BlynkNcpExample/archive/refs/heads/main.zip).
 
