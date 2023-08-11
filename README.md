@@ -107,12 +107,20 @@ Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find De
 > The community edition of Blynk.NCP is available for personal use and evaluation.  
 > If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
 
+## Troubleshooting
+
+If something doesn't work, try some of these solutions:
+- If your board is based on a Raspberry Pi RP2040 chip, it may fail to work on Windows. Please apply [this fix][fix_windows_rp2040]
+- Upgrade PlatformIO to the latest version. Run: `pio upgrade`
+- Upgrade packages to the latest version. Run: `pio pkg update`
+
 
 [blynk_sales]: https://blynk.io/en/contact-us-business
 [pio_vscode]: https://docs.platformio.org/en/stable/integration/ide/vscode.html#ide-vscode
 [pio_cli]: https://docs.platformio.org/en/stable/core/index.html
 [restore]: ./docs/RestoreFirmware.md
 [arduino_ide]: https://github.com/blynkkk/blynk-library/blob/master/examples/Blynk.Edgent/Edgent_NCP/Edgent_NCP.ino
+[fix_windows_rp2040]: https://arduino-pico.readthedocs.io/en/latest/platformio.html#important-steps-for-windows-users-before-installing
 
 [1]: https://store-usa.arduino.cc/products/uno-r4-wifi
 [2]: https://store-usa.arduino.cc/products/portenta-c33
