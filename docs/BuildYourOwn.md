@@ -30,9 +30,11 @@ After printing this bootlog identification, the device waits for the `BlynkNcpDr
 ## 2. Assemble the board
 
 Connect Blynk.NCP to the Primary MCU of your choice (i.e. `STM32`, `ATmega`, `RP2040`, `ATSAMD`, `K210`, ...) using UART.  
-For example, here's how to connect the XBee form factor modules (`Macchina SuperB`, `DFRobot WiFi Bee`) to the `Raspberry Pi Pico` board:
+Here are some examples:
 
-<img alt="Blynk.NCP breadboard" src="./Boards/PiPico-XBee.png" width="50%" />
+| Arduino Nano + ESP01 | RPi Pico + XBee modules  (Macchina SuperB, DFRobot WiFi Bee) | Pro Micro + WT32 ETH01 | Pro Micro + Witty Cloud |
+| --- | --- | --- | --- |
+| ![1](./Boards/Nano-ESP01.png) | ![1](./Boards/PiPico-XBee.png) | ![1](./Boards/ProMicro-WT32-ETH01.png) | ![1](./Boards/ProMicro-Witty.png) |
 
 ## 3. Use the Blynk library to communicate with the NCP
 
