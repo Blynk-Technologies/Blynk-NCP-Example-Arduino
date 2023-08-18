@@ -51,8 +51,9 @@ Additional services that can be provided by the Blynk.NCP:
 
 </details>
 
-<details><summary><b>Supported Dual-MCU Boards</b></summary>
+<details><summary><b>Supported Boards</b></summary>
 
+### Dual-MCU Boards
 This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
 Board                            |                 | 🔄 MCU / NCP   | 🌐            | ⚙️      | 🗃️
@@ -68,6 +69,7 @@ Board                            |                 | 🔄 MCU / NCP   | 🌐    
 
 🔄 Over-the-Air Updates, 🌐 Connectivity, ⚙️ Provisioning, 🗃️ File System
 
+### Custom Boards
 You can also [add one of the supported connectivity modules](docs/BuildYourOwn.md) to your own board.
 
 </details>
