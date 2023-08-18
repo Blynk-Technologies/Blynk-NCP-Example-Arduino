@@ -9,7 +9,7 @@
 
 **Blynk.NCP** is a solution that off-loads connectivity to a **Network Co-Processor (NCP)**, while your application logic resides on the **Primary MCU**. This implies a [dual-Microcontroller Unit (MCU)](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present) architecture.
 
-## When to use Blynk.NCP?
+<details><summary><b>When to use Blynk.NCP?</b></summary>
 
 Using Blynk.NCP is recommended if one of these is true:
 
@@ -19,7 +19,9 @@ Using Blynk.NCP is recommended if one of these is true:
 - You have included an **AT command**-based module, but you struggle to make it work right or to achieve your product goals
 - You are looking for **ridiculously low** risks, integration efforts, and time to market, along with **improved reliability** of your products
 
-## Features
+</details>
+
+<details><summary><b>Core Features</b></summary>
 
 - **Blynk.Inject**: connect your devices easily using [<img src="https://cdn.rawgit.com/simple-icons/simple-icons/develop/icons/googleplay.svg" width="16" height="16" /> Android App](https://play.google.com/store/apps/details?id=cloud.blynk),
 [<img src="https://cdn.rawgit.com/simple-icons/simple-icons/develop/icons/apple.svg" width="16" height="16" /> iOS App](https://apps.apple.com/us/app/blynk-iot/id1559317868) or [🌐 Web Dashboard](https://blynk.cloud)
@@ -34,8 +36,11 @@ Using Blynk.NCP is recommended if one of these is true:
   - Both NCP and the Primary MCU firmware updates
   - Direct firmware upgrade using iOS/Android App, before device activation
 
-Additional services that can be provided by the Blynk.NCP:
+</details>
 
+<details><summary><b>Extra Features</b></summary>
+
+Additional services that can be provided by the Blynk.NCP:
 - `⏳ soon` Persistent automation scenarios - work even if the device is offline
 - `⏳ soon` Non-volatile storage for [Preferences](https://github.com/vshymanskyy/Preferences) library
 - `✅ ready` NCP-assisted [fail-safe OTA updates](https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Firmware%20Upgrade.md#ncp-assisted-fail-safe-ota-updates)
@@ -45,7 +50,9 @@ Additional services that can be provided by the Blynk.NCP:
 - `🤔 later` File System storage
 - `🤔 later` Generic UDP/TCP/TLS socket API
 
-## Supported boards
+</details>
+
+<details><summary><b>Supported Dual-MCU Boards</b></summary>
 
 This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
@@ -62,9 +69,9 @@ Board                            |                 | 🔄 MCU / NCP   | 🌐    
 
 🔄 Over-the-Air Updates, 🌐 Connectivity, ⚙️ Provisioning, 🗃️ File System
 
-## Custom boards
-
 You can also [add one of the supported connectivity modules](docs/BuildYourOwn.md) to your own board.
+
+</details>
 
 ## Getting started
 
