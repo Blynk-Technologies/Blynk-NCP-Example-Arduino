@@ -12,6 +12,7 @@
 <details><summary><b>When to use Blynk.NCP?</b></summary>
 
 Using Blynk.NCP is recommended if one of these is true:
+
 - You have one of the [supported dual-MCU](#supported-boards) boards and want connect it to Blynk
 - You're building a new IoT product with specific requirements for the Primary MCU, so you're adding a separate connectivity module
 - You are using Blynk for retrofitting your existing products
@@ -40,6 +41,7 @@ Using Blynk.NCP is recommended if one of these is true:
 <details><summary><b>Extra Features</b></summary>
 
 Additional services that can be provided by the Blynk.NCP:
+
 - `⏳ soon` Persistent automation scenarios - work even if the device is offline
 - `⏳ soon` Non-volatile storage for the [Preferences](https://github.com/vshymanskyy/Preferences) library
 - `✅ ready` NCP-assisted [fail-safe OTA updates](https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Firmware%20Upgrade.md#ncp-assisted-fail-safe-ota-updates)
@@ -79,17 +81,20 @@ You can also [add one of the supported connectivity modules](docs/BuildYourOwn.m
 1. This is a **PlatformIO** project. Please install the [**VSCode plugin**][pio_vscode] or [**PlatformIO CLI**][pio_cli].
 2. Clone [this repository][self] using `git`, or download it as a [`ZIP` file][self_zip].
 3. Flash the Blynk.NCP firmware (***replace `nano33iot` with your board type***):
+
     ```sh
     pio run -e nano33iot -t upload_ncp
     ```
     > __Warning__: This overwrites both the Main MCU and the connectivity module firmware.  
     > You can [restore the stock firmware][restore] easily.
 4. Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
+
     ```cpp
     #define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
     #define BLYNK_TEMPLATE_NAME         "MyDevice"
     ```
 5. Upload the example project, and run the serial monitor:
+
     ```sh
     pio run -e nano33iot -t upload -t monitor
     ```
