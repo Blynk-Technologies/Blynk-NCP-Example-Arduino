@@ -12,7 +12,6 @@
 <details><summary><b>When to use Blynk.NCP?</b></summary>
 
 Using Blynk.NCP is recommended if one of these is true:
-
 - You have one of the [supported dual-MCU](#supported-boards) boards and want connect it to Blynk
 - You're building a new IoT product with specific requirements for the Primary MCU, so you're adding a separate connectivity module
 - You are using Blynk for retrofitting your existing products
@@ -42,12 +41,12 @@ Using Blynk.NCP is recommended if one of these is true:
 
 Additional services that can be provided by the Blynk.NCP:
 - `⏳ soon` Persistent automation scenarios - work even if the device is offline
-- `⏳ soon` Non-volatile storage for [Preferences](https://github.com/vshymanskyy/Preferences) library
+- `⏳ soon` Non-volatile storage for the [Preferences](https://github.com/vshymanskyy/Preferences) library
 - `✅ ready` NCP-assisted [fail-safe OTA updates](https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Firmware%20Upgrade.md#ncp-assisted-fail-safe-ota-updates)
 - `✅ ready` Connectivity-related **device state indication** - requires a monochrome/RGB/addressable LED attached to the NCP
 - `✅ ready` **User button** (also used for configuration reset) - requires a momentary push button attached to the NCP
 - `✅ ready` **Factory testing** and provisioning
-- `🤔 later` File System storage
+- `🤔 later` Generic File System storage
 - `🤔 later` Generic UDP/TCP/TLS socket API
 
 </details>
@@ -76,7 +75,7 @@ You can also [add one of the supported connectivity modules](docs/BuildYourOwn.m
 ## Getting started
 
 1. This is a **PlatformIO** project. Please install the [**VSCode plugin**][pio_vscode] or [**PlatformIO CLI**][pio_cli].
-2. Clone this repository using `git`, or download it as a [`ZIP` file](https://github.com/blynkkk/BlynkNcpExample/archive/refs/heads/main.zip).
+2. Clone [this repository][self] using `git`, or download it as a [`ZIP` file][self_zip].
 3. Flash the Blynk.NCP firmware (***replace `nano33iot` with your board type***):
     ```sh
     pio run -e nano33iot -t upload_ncp
@@ -110,7 +109,8 @@ If something doesn't work, try some of these solutions:
 > If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
 
 
-
+[self]: https://github.com/blynkkk/BlynkNcpExample
+[self_zip]: https://github.com/blynkkk/BlynkNcpExample/archive/refs/heads/main.zip
 [blynk_sales]: https://blynk.io/en/contact-us-business
 [pio_vscode]: https://docs.platformio.org/en/stable/integration/ide/vscode.html#ide-vscode
 [pio_cli]: https://docs.platformio.org/en/stable/core/index.html
