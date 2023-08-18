@@ -98,8 +98,7 @@ pio run -e nano33iot -t upload_ncp
 5. Build and flash the example project, run the serial monitor:
 
 ```sh
-pio run -e nano33iot -t upload
-pio device monitor
+pio run -e nano33iot -t upload -t monitor
 ```
 
 ## Use the Blynk iOS/Android app to configure your new device
