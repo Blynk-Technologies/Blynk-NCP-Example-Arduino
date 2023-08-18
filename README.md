@@ -76,43 +76,26 @@ You can also [add one of the supported connectivity modules](docs/BuildYourOwn.m
 ## Getting started
 
 1. This is a **PlatformIO** project. Please install the [**VSCode plugin**][pio_vscode] or [**PlatformIO CLI**][pio_cli].
-
 2. Clone this repository using `git`, or download it as a [`ZIP` file](https://github.com/blynkkk/BlynkNcpExample/archive/refs/heads/main.zip).
-
 3. Flash the Blynk.NCP firmware (***replace `nano33iot` with your board type***):
-
-```sh
-pio run -e nano33iot -t upload_ncp
-```
-
-> __Warning__: This overwrites both the Main MCU and the connectivity module firmware.  
-> You can [restore the stock firmware][restore] easily.
-
+    ```sh
+    pio run -e nano33iot -t upload_ncp
+    ```
+    > __Warning__: This overwrites both the Main MCU and the connectivity module firmware.  
+    > You can [restore the stock firmware][restore] easily.
 4. Open `src/main.cpp` and fill in [information from your Blynk Template](https://bit.ly/BlynkInject):
-
-```cpp
-#define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
-#define BLYNK_TEMPLATE_NAME         "MyDevice"
-```
-
-5. Build and flash the example project, run the serial monitor:
-
-```sh
-pio run -e nano33iot -t upload -t monitor
-```
-
-## Use the Blynk iOS/Android app to configure your new device
-
-Ensure that the Blynk App is installed on your smartphone and scan this QR code:
-
-<img alt="Add New Device QR" src="./docs/Images/AddNewDeviceQR.png" width="250" />
-
-Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
-
-## Disclaimer
-
-> The community edition of Blynk.NCP is available for personal use and evaluation.  
-> If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
+    ```cpp
+    #define BLYNK_TEMPLATE_ID           "TMPxxxxxx"
+    #define BLYNK_TEMPLATE_NAME         "MyDevice"
+    ```
+5. Upload the example project, and run the serial monitor:
+    ```sh
+    pio run -e nano33iot -t upload -t monitor
+    ```
+6. Use the Blynk iOS/Android app to configure your new device  
+    Ensure that the Blynk App is installed on your smartphone and scan this QR code:  
+    <img alt="Add New Device QR" src="./docs/Images/AddNewDeviceQR.png" width="250" />  
+    Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 
 ## Troubleshooting
 
@@ -120,6 +103,12 @@ If something doesn't work, try some of these solutions:
 - If your board is based on a Raspberry Pi RP2040 chip, it may fail to work on Windows. Please apply [this fix][fix_windows_rp2040]
 - Upgrade PlatformIO to the latest version. Run: `pio upgrade`
 - Upgrade packages to the latest version. Run: `pio pkg update`
+
+## Disclaimer
+
+> The community edition of Blynk.NCP is available for personal use and evaluation.  
+> If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
+
 
 
 [blynk_sales]: https://blynk.io/en/contact-us-business
