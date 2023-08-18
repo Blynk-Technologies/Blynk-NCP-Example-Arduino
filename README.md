@@ -109,7 +109,7 @@ If something doesn't work, try some of these solutions:
 
 - If your board is based on a Raspberry Pi RP2040 chip, it may fail to work on Windows. Please apply [this fix][fix_windows_rp2040]
 - Upgrade PlatformIO to the latest version. Run: `pio upgrade`
-- Upgrade packages to the latest version. Run: `pio pkg update`
+- Upgrade packages to the latest version. Run: `pio pkg update --no-save`
 
 ## Disclaimer
 
