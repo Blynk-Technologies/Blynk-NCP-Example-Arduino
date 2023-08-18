@@ -2,7 +2,7 @@
 # Blynk.NCP
 
 [![Issues](https://img.shields.io/github/issues/blynkkk/BlynkNcpExample.svg)](https://github.com/blynkkk/BlynkNcpExample/issues)
-[![downloads](https://img.shields.io/github/downloads/blynkkk/BlynkNcpDriver/total)](https://github.com/blynkkk/BlynkNcpDriver/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/blynkkk/BlynkNcpDriver/total)](https://github.com/blynkkk/BlynkNcpDriver/releases/latest)
 [![PlatformIO CI](https://img.shields.io/github/actions/workflow/status/blynkkk/BlynkNcpExample/build.yml)](https://github.com/blynkkk/BlynkNcpExample/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/blynkkk/BlynkNcpExample?color=blue)](LICENSE)
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
@@ -106,6 +106,7 @@ You can also [add one of the supported connectivity modules](docs/BuildYourOwn.m
 ## Troubleshooting
 
 If something doesn't work, try some of these solutions:
+
 - If your board is based on a Raspberry Pi RP2040 chip, it may fail to work on Windows. Please apply [this fix][fix_windows_rp2040]
 - Upgrade PlatformIO to the latest version. Run: `pio upgrade`
 - Upgrade packages to the latest version. Run: `pio pkg update`
