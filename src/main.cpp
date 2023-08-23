@@ -32,30 +32,30 @@ BLYNK_WRITE(V1) {
 }
 
 void setupUserButton() {
-  button.setLongPressIntervalMs(1000);
+  Button1.setLongPressIntervalMs(1000);
 
-  button.attachClick([]() {
+  Button1.attachClick([]() {
     displayMessage("Click!");
     timer.setTimeout(1000, displayClear);
   });
-  button.attachDoubleClick([]() {
+  Button1.attachDoubleClick([]() {
     displayMessage("Double Click!");
     timer.setTimeout(1000, displayClear);
   });
 
-  button.attachLongPressStart([]() {
+  Button1.attachLongPressStart([]() {
     displayMessage("Hold button to reset config");
   });
-  button.attachDuringLongPress([]() {
-    const uint32_t t = button.getPressedMs();
+  Button1.attachDuringLongPress([]() {
+    const uint32_t t = Button1.getPressedMs();
     if (t > 10000 && t < 15000) {
       displayMessage("Release button");
     } else if (t > 15000) {
       displayClear();
     }
   });
-  button.attachLongPressStop([]() {
-    const uint32_t t = button.getPressedMs();
+  Button1.attachLongPressStop([]() {
+    const uint32_t t = Button1.getPressedMs();
     if (t > 10000 && t < 15000) {
       if (Blynk.resetConfig()) {
         BLYNK_LOG("Blynk.NCP configuration is erased");
@@ -113,6 +113,6 @@ void setup() {
 void loop() {
   timer.run();
   Blynk.run();
-  button.tick();
+  Button1.tick();
   delay(1);
 }

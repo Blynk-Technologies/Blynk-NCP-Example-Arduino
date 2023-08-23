@@ -8,8 +8,8 @@
   #include "NotoSansBold15.h"
 
   TFT_eSPI tft;
-  OneButton button(PIN_BUTTON1, true);
-  OneButton button2(PIN_BUTTON2, true);
+  OneButton Button1(PIN_BUTTON1, true);
+  OneButton Button2(PIN_BUTTON2, true);
 
   static
   void setupBoard() {
@@ -71,9 +71,9 @@
   TFT_eSPI tft;
   LCDBackLight backLight;
 
-  OneButton button(WIO_KEY_C, true);
-  OneButton button2(WIO_KEY_B, true);
-  OneButton button3(WIO_KEY_A, true);
+  OneButton Button1(WIO_KEY_C, true);
+  OneButton Button2(WIO_KEY_B, true);
+  OneButton Button3(WIO_KEY_A, true);
 
   static
   void setupBoard() {
@@ -127,7 +127,7 @@
 #else
 
   // Attach a momentary push button to pin 6 (active LOW)
-  OneButton button(6, true);
+  OneButton Button1(6, true);
 
   static
   void setupBoard() {
