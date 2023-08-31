@@ -13,6 +13,12 @@ class dotdict(dict):
     __setattr__ = dict.__setitem__
     __delattr__ = dict.__delitem__
 
+def toBool(v):
+    if type(v) == str:
+        return v.lower() in [ "yes", "true" ]
+    else:
+        return bool(v)
+
 pioenv = env["PIOENV"]
 
 custom_ncp = dotdict({})
@@ -20,9 +26,9 @@ custom_ncp.flasher      = env.GetProjectOption("custom_ncp.flasher", "BlynkNcpFl
 custom_ncp.firmware     = env.GetProjectOption("custom_ncp.firmware", None)
 custom_ncp.firmware_ver = env.GetProjectOption("custom_ncp.firmware_ver", "latest")
 custom_ncp.upload_speed = env.GetProjectOption("custom_ncp.upload_speed", "460800")
-custom_ncp.manual_reset = env.GetProjectOption("custom_ncp.manual_reset", False)
-custom_ncp.erase_all    = env.GetProjectOption("custom_ncp.erase_all", True)
-custom_ncp.use_stub     = env.GetProjectOption("custom_ncp.use_stub", True)
+custom_ncp.manual_reset = toBool(env.GetProjectOption("custom_ncp.manual_reset", False))
+custom_ncp.erase_all    = toBool(env.GetProjectOption("custom_ncp.erase_all", True))
+custom_ncp.use_stub     = toBool(env.GetProjectOption("custom_ncp.use_stub", True))
 if custom_ncp.manual_reset:
     custom_ncp.before_upload = env.GetProjectOption("custom_ncp.before_upload",  "no_reset")
     custom_ncp.after_upload  = env.GetProjectOption("custom_ncp.after_upload",   "no_reset")
@@ -177,6 +183,7 @@ def upload_ncp(*args, **kwargs):
 
             check_exec(' '.join(["python3",
                 "tools/flash_wio_terminal.py",
+                "--erase-all" if custom_ncp.erase_all else "",
                 firmware
             ]))
 

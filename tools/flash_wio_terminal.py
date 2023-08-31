@@ -140,7 +140,13 @@ def extractFirmware(filename):
         zf.extractall(_ambd_flash_tool)
 
 if __name__ == '__main__':
-    firmware = os.path.realpath(sys.argv[1])
+    import argparse
+    parser = argparse.ArgumentParser(description='WIO Terminal flasher utility')
+    parser.add_argument('--erase-all', action="store_true", help='Erase all flash')
+    parser.add_argument('firmware', metavar='ZIP_FILE',  help='firmware zip file')
+    args = parser.parse_args()
+
+    firmware = os.path.realpath(args.firmware)
 
     tool = getFlashTool()
     port, isbootloader = getAvailableBoard()
@@ -149,9 +155,10 @@ if __name__ == '__main__':
         sys.exit(1)
 
     with pushd(_ambd_flash_tool):
-        print("Erasing, please wait...")
-        makeEmptyImage(2048)
-        os.system(f"{tool} {port}")
+        if args.erase_all:
+            print("Erasing, please wait...")
+            makeEmptyImage(2048)
+            os.system(f"{tool} {port}")
         print("Flashing, please wait...")
         extractFirmware(firmware)
         os.system(f"{tool} {port}")
