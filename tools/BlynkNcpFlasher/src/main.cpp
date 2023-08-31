@@ -180,7 +180,7 @@ void ledToggle();
 
     void ncpReboot() {
       tft.fillScreen(TFT_BLACK);
-      tft.drawString("RTL8720 updated", TFT_HEIGHT/2, TFT_WIDTH/2);
+      tft.drawString("Firmware update OK", TFT_HEIGHT/2, TFT_WIDTH/2);
 
       digitalWrite(LED_BUILTIN, LOW);
       digitalWrite(RTL8720D_CHIP_PU, LOW);
