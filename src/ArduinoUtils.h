@@ -20,6 +20,8 @@ void waitSerialConsole(T& ser) {
 #if defined(LINUX)
   // Not needed on linux
   (void) ser;
+#elif defined(ARDUINO_UNOWIFIR4)
+  delay(1500);
 #else
   while (!ser && (millis() < 3000)) { delay(10); }
   delay(100);
