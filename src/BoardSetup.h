@@ -124,6 +124,54 @@
                             RGBtoRGB16(color), TFT_BLACK);
   }
 
+#elif defined(MICRODUINO_OLED)
+
+  #include <U8glib.h>
+
+  U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NONE);
+
+  // Attach a momentary push button to pin 6 (active LOW)
+  OneButton Button1(6, true);
+
+  static
+  void setupBoard() {
+    u8g.setColorIndex(1);
+    u8g.setFont(u8g_font_6x10);
+
+    u8g.firstPage();
+    do {
+      u8g.drawStr(10, 36, "Blynk.NCP");
+    } while(u8g.nextPage());
+
+    delay(1000);
+  }
+
+  static
+  void displayClear() {
+    u8g.firstPage();
+    do {
+      //u8g.clear();
+    } while(u8g.nextPage());
+  }
+
+  static
+  void displayMessage(const String& text) {
+    Serial.println(text);
+
+    u8g.firstPage();
+    do {
+      u8g.drawStr(10, 36, text.c_str());
+    } while(u8g.nextPage());
+  }
+
+  static
+  void displayColor(uint32_t color) {
+    char buff[32];
+    snprintf(buff, sizeof(buff),
+             "Color: %06" PRIx32, color);
+    displayMessage(buff);
+  }
+
 #else
 
   // Attach a momentary push button to pin 6 (active LOW)
@@ -147,7 +195,7 @@
     char buff[32];
     snprintf(buff, sizeof(buff),
              "Color: %06" PRIx32, color);
-    Serial.println(buff);
+    displayMessage(buff);
   }
 
 #endif

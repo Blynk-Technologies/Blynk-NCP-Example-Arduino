@@ -135,7 +135,9 @@ void ledToggle();
 
     #include "loop_renesas.h"
 
-#elif defined(ARDUINO_RASPBERRY_PI_PICO)
+#elif defined(ARDUINO_RASPBERRY_PI_PICO) || \
+      defined(__AVR_ATmega32U4__) || \
+      defined(__AVR_ATmega16U4__)
 
     #define SerialNCP Serial1
 
@@ -202,10 +204,9 @@ void ledToggle();
   #define LED_PIN LED_BUILTIN
 #endif
 
-void ledInit() {
 #if defined(LED_PIN)
+void ledInit() {
   pinMode(LED_PIN, OUTPUT); digitalWrite(LED_PIN, HIGH);
-#endif
 }
 
 void ledOFF() {
@@ -220,6 +221,11 @@ void ledToggle() {
     digitalWrite(LED_PIN, !digitalRead(LED_PIN));
   }
 }
+#else
+void ledInit()    {}
+void ledOFF()     {}
+void ledToggle()  {}
+#endif
 
 
 /*
