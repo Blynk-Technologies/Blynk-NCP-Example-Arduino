@@ -60,7 +60,7 @@ This example project is compatible with a set of ready-to-use Dual-MCU boards:
 
 Board                            |                 | 🔄 MCU / NCP   | 🌐            | ⚙️      | 🗃️
 :--                              | ---             | :---           | :---         | :---    | :---
-[UNO R4 WiFi][1]                 | `unoR4wifi`     | `⏳ / ✅`      | WiFi 2.4     | BLE     | 4.25 MB
+[UNO R4 WiFi][1]                 | `unoR4wifi`     | `✅ / ✅`      | WiFi 2.4     | BLE     | 4.25 MB
 [Portenta C33][2]                | `portentaC33`   | `⏳ / ✅`      | WiFi 2.4     | BLE     | 512 KB
 [Nano RP2040 Connect][3]         | `rp2040connect` | `✅ / ❌`      | WiFi 2.4     | BLE     | 384 KB
 [Nano 33 IoT][4]                 | `nano33iot`     | `✅ / ❌`      | WiFi 2.4     | BLE     | 384 KB
