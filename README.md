@@ -100,8 +100,8 @@ You can also [add one of the supported connectivity modules](docs/BuildYourOwn.m
     ```sh
     pio run -e nano33iot -t upload -t monitor
     ```
-6. Use the Blynk iOS/Android app to configure your new device  
-    Ensure that the Blynk App is installed on your smartphone and scan this QR code:  
+6. Use the Blynk iOS/Android app to configure your new device.  
+    Ensure that the Blynk App is installed on your smartphone.  
     Open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 
 ## Troubleshooting
