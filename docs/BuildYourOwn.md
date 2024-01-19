@@ -65,11 +65,8 @@ You can use this low-level, `C99` compatible library with minimal dependencies d
 
 ## 4. Use the Blynk iOS/Android app to configure your new device
 
-Ensure that the Blynk App is installed on your smartphone and scan this QR code:
-
-<img alt="Add New Device QR" src="./Images/AddNewDeviceQR.png" width="250" />
-
-Alternatively: Open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
+Ensure that the Blynk App is installed on your smartphone.  
+Open the `Blynk App` -> click `Add New Device` -> select `Find Devices Nearby`
 
 ## 5. Next steps
 
