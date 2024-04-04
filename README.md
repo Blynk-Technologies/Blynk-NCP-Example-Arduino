@@ -1,10 +1,10 @@
 
 # Blynk.NCP
 
-[![Issues](https://img.shields.io/github/issues/blynkkk/BlynkNcpExample.svg)](https://github.com/blynkkk/BlynkNcpExample/issues)
-[![Downloads](https://img.shields.io/github/downloads/blynkkk/BlynkNcpDriver/total)](https://github.com/blynkkk/BlynkNcpDriver/releases/latest)
+[![Issues](https://img.shields.io/github/issues/Blynk-Technologies/BlynkNcpExample.svg)](https://github.com/Blynk-Technologies/BlynkNcpExample/issues)
+[![Downloads](https://img.shields.io/github/downloads/Blynk-Technologies/BlynkNcpDriver/total)](https://github.com/Blynk-Technologies/BlynkNcpDriver/releases/latest)
 [![CI Status](https://img.shields.io/github/actions/workflow/status/Blynk-Technologies/BlynkNcpExample/build.yml?branch=main&logo=github&label=tests)](https://github.com/Blynk-Technologies/BlynkNcpExample/actions)
-[![License](https://img.shields.io/github/license/blynkkk/BlynkNcpExample?color=blue)](LICENSE)
+[![License](https://img.shields.io/github/license/Blynk-Technologies/BlynkNcpExample?color=blue)](LICENSE)
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
 **Blynk.NCP** is a solution that off-loads connectivity to a **Network Co-Processor (NCP)** while your application logic resides on the **Primary MCU**. This implies a [dual-Microcontroller Unit (MCU)](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present) architecture.
@@ -44,7 +44,7 @@ Additional services provided by the Blynk.NCP:
 
 - `⏳ soon` Persistent automation scenarios - work even if the device is offline
 - `⏳ soon` Non-volatile storage for the [Preferences](https://github.com/vshymanskyy/Preferences) library
-- `✅ ready` NCP-assisted [fail-safe OTA updates](https://github.com/blynkkk/BlynkNcpDriver/blob/main/docs/Firmware%20Upgrade.md#ncp-assisted-fail-safe-ota-updates)
+- `✅ ready` NCP-assisted [fail-safe OTA updates](https://github.com/Blynk-Technologies/BlynkNcpDriver/blob/main/docs/Firmware%20Upgrade.md#ncp-assisted-fail-safe-ota-updates)
 - `✅ ready` Connectivity-related **device state indication** - requires a monochrome/RGB/addressable LED attached to the NCP
 - `✅ ready` **User button** (also used for configuration reset) - requires a momentary push button attached to the NCP
 - `✅ ready` **Factory testing** and provisioning
@@ -118,13 +118,13 @@ If something doesn't work, try some of these solutions:
 > If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
 
 
-[self]: https://github.com/blynkkk/BlynkNcpExample
-[self_zip]: https://github.com/blynkkk/BlynkNcpExample/archive/refs/heads/main.zip
+[self]: https://github.com/Blynk-Technologies/BlynkNcpExample
+[self_zip]: https://github.com/Blynk-Technologies/BlynkNcpExample/archive/refs/heads/main.zip
 [blynk_sales]: https://blynk.io/en/contact-us-business
 [pio_vscode]: https://docs.platformio.org/en/stable/integration/ide/vscode.html#ide-vscode
 [pio_cli]: https://docs.platformio.org/en/stable/core/index.html
 [restore]: ./docs/RestoreFirmware.md
-[arduino_ide]: https://github.com/blynkkk/blynk-library/blob/master/examples/Blynk.Edgent/Edgent_NCP/Edgent_NCP.ino
+[arduino_ide]: https://github.com/Blynk-Technologies/blynk-library/blob/master/examples/Blynk.Edgent/Edgent_NCP/Edgent_NCP.ino
 [fix_windows_rp2040]: https://arduino-pico.readthedocs.io/en/latest/platformio.html#important-steps-for-windows-users-before-installing
 
 [1]: https://store-usa.arduino.cc/products/uno-r4-wifi
