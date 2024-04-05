@@ -1,10 +1,10 @@
 
 # Blynk.NCP
 
-[![Issues](https://img.shields.io/github/issues/Blynk-Technologies/BlynkNcpExample.svg)](https://github.com/Blynk-Technologies/BlynkNcpExample/issues)
-[![Downloads](https://img.shields.io/github/downloads/Blynk-Technologies/BlynkNcpDriver/total)](https://github.com/Blynk-Technologies/BlynkNcpDriver/releases/latest)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/Blynk-Technologies/BlynkNcpExample/build.yml?branch=main&logo=github&label=tests)](https://github.com/Blynk-Technologies/BlynkNcpExample/actions)
-[![License](https://img.shields.io/github/license/Blynk-Technologies/BlynkNcpExample?color=blue)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/Blynk-Technologies/Blynk-NCP-Driver.svg)](https://github.com/Blynk-Technologies/Blynk-NCP-Driver/issues)
+[![Downloads](https://img.shields.io/github/downloads/Blynk-Technologies/Blynk-NCP-Driver/total)](https://github.com/Blynk-Technologies/Blynk-NCP-Driver/releases/latest)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/Blynk-Technologies/Blynk-NCP-Example-Arduino/build.yml?branch=main&logo=github&label=tests)](https://github.com/Blynk-Technologies/Blynk-NCP-Example-Arduino/actions)
+[![License](https://img.shields.io/github/license/Blynk-Technologies/Blynk-NCP-Example-Arduino?color=blue)](LICENSE)
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
 **Blynk.NCP** is a solution that off-loads connectivity to a **Network Co-Processor (NCP)** while your application logic resides on the **Primary MCU**. This implies a [dual-Microcontroller Unit (MCU)](https://docs.google.com/presentation/d/1aP2sQWB0J9EWj8Y1h5qeyfm2aFwaNSUKnCE-k7zxVnk/present) architecture.
@@ -113,14 +113,18 @@ If something doesn't work, try some of these solutions:
 - Upgrade PlatformIO to the latest version. Run: `pio upgrade`
 - Upgrade packages to the latest version. Run: `pio pkg update --no-save`
 
+## Report an issue
+
+Issues are maintained in the [Blynk NCP Driver](https://github.com/Blynk-Technologies/Blynk-NCP-Driver/issues) repository.
+
 ## Disclaimer
 
 > The community edition of Blynk.NCP is available for personal use and evaluation.  
 > If you're interested in using Blynk.NCP for commercial applications, feel free to [contact Blynk][blynk_sales]. Thank you!
 
 
-[self]: https://github.com/Blynk-Technologies/BlynkNcpExample
-[self_zip]: https://github.com/Blynk-Technologies/BlynkNcpExample/archive/refs/heads/main.zip
+[self]: https://github.com/Blynk-Technologies/Blynk-NCP-Example-Arduino
+[self_zip]: https://github.com/Blynk-Technologies/Blynk-NCP-Example-Arduino/archive/refs/heads/main.zip
 [blynk_sales]: https://blynk.io/en/contact-us-business
 [pio_vscode]: https://docs.platformio.org/en/stable/integration/ide/vscode.html#ide-vscode
 [pio_cli]: https://docs.platformio.org/en/stable/core/index.html
